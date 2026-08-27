@@ -6,70 +6,78 @@
 <title>MIOKI // PRIVATE WEB DESKTOP</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px}
-a{color:#b83f6d;text-decoration:none}a:hover{text-decoration:underline}
+body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#d9a890 1px,transparent 1px),radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);background-size:28px 28px,47px 47px}
+a{color:#b83f6d;text-decoration:underline}a:hover{text-decoration:none}
 a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.card{cursor:pointer}
-::-webkit-scrollbar{width:12px}
-::-webkit-scrollbar-track{background:#fff0f5;border:1px dotted #d17697}
-::-webkit-scrollbar-thumb{background:#d17697;border-radius:6px;border:2px solid #fff0f5}
+::-webkit-scrollbar{width:14px}
+::-webkit-scrollbar-track{background:#f7dbe6;border-left:1px solid #d4a5b5;border-right:1px solid #fff}
+::-webkit-scrollbar-thumb{background:#d17697;border:2px outset #e8a0bb}
 ::-webkit-scrollbar-thumb:hover{background:#c74d78}
-.shell{width:1060px;margin:28px auto 60px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3)}
-.topbar{height:40px;padding:8px 11px;background:#c74d78;color:#fff;border-bottom:2px solid #673047;font-weight:bold}.topbar span{float:right;letter-spacing:4px}
-.hero{margin:10px;padding:25px 30px;height:230px;border:2px dashed #d17697;background:linear-gradient(135deg,#f2b1c7,#eca0bb 55%,#f6c8d8);position:relative;overflow:hidden}
-.hero:before{content:"♡  ✦  ♡  ✦  ♡  ✦  ♡";position:absolute;right:22px;top:16px;color:#fff;font-size:17px;letter-spacing:6px}.hero:after{content:"1999 — 2000 — 2026";position:absolute;right:24px;bottom:17px;color:#fff8fb}
-.hero h1{margin:5px 0 0;font:76px Georgia,serif;letter-spacing:10px;color:#fff;text-shadow:4px 4px 0 #a43e64}.tag{display:inline-block;background:#fff4f7;border:1px solid #c75b81;padding:3px 10px;margin-top:8px}
+.shell{width:1060px;margin:28px auto 60px;background:#fff8ee;border:3px double #673047;box-shadow:6px 6px 0 rgba(80,35,55,.25)}
+.topbar{height:36px;padding:6px 11px;background:#c74d78;color:#fff;border-bottom:2px solid #673047;font-weight:bold;font-size:12px;letter-spacing:1px}.topbar span{float:right;letter-spacing:4px}
+.hero{margin:10px;padding:22px 28px;height:210px;border:2px dashed #d17697;background:linear-gradient(135deg,#f2b1c7,#eca0bb 55%,#f6c8d8);position:relative;overflow:hidden}
+.hero:before{content:"♡  ✦  ♡  ✦  ♡  ✦  ♡";position:absolute;right:22px;top:14px;color:#fff;font-size:15px;letter-spacing:6px}.hero:after{content:"1999 — 2000 — 2026";position:absolute;right:24px;bottom:14px;color:#fff8fb;font-size:11px}
+.hero h1{margin:5px 0 0;font:72px Georgia,serif;letter-spacing:12px;color:#fff;text-shadow:4px 4px 0 #a43e64}.tag{display:inline-block;background:#fff4f7;border:1px solid #c75b81;padding:3px 10px;margin-top:8px}
 .status{margin:0 10px 10px;padding:6px 9px;background:#fff0f5;border:1px dotted #d17697;white-space:nowrap;overflow:hidden;text-align:center}
-.desktop{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:0 10px}.window{background:#fffdf8;border:2px solid #8c4562;box-shadow:4px 4px 0 rgba(140,69,98,.16);margin-bottom:10px}.window-title{background:#c74d78;color:#fff;padding:5px 8px;font-weight:bold}.window-title span{float:right}.window-body{padding:10px}
-.avatar{height:150px;border:2px dotted #d17697;background:#f7d8e3;display:flex;align-items:center;justify-content:center;text-align:center;font:20px Georgia,serif;color:#bd5279;margin-bottom:8px}
-.menu a{display:block;padding:5px 7px;border-bottom:1px dotted #d9a0b4}.menu a:hover{background:#ffe7ef;text-decoration:none}
-.badge{display:inline-block;padding:2px 5px;margin:2px;border:1px solid #8c4562;background:#fff0f5;font-size:10px}.counter{background:#422433;color:#fff;text-align:center;padding:3px;letter-spacing:4px}
+.desktop{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:0 10px}
+.window{background:#fffdf8;border:2px solid #8c4562;box-shadow:4px 4px 0 rgba(140,69,98,.2),inset 1px 1px 0 #fff;margin-bottom:10px}
+.window-title{background:#c74d78;color:#fff;padding:5px 8px;font-weight:bold;font-size:12px;letter-spacing:1px}.window-title span{float:right;letter-spacing:2px}.window-body{padding:10px}
+.avatar{height:140px;border:2px dotted #d17697;background:#f7d8e3;display:flex;align-items:center;justify-content:center;text-align:center;font:18px Georgia,serif;color:#bd5279;margin-bottom:8px}
+.menu a{display:block;padding:5px 7px;border-bottom:1px dotted #d9a0b4}.menu a:hover{background:#ffe7ef;text-decoration:underline}
+.badge{display:inline-block;padding:2px 5px;margin:2px;border:1px outset #d4a5b5;background:#fff0f5;font-size:10px}
+.counter{background:#422433;color:#ff8fb3;text-align:center;padding:4px;letter-spacing:4px;font-weight:bold;text-shadow:0 0 4px #ff8fb3;border:1px inset #673047}
 .main{min-width:0}.welcome-grid,.two{display:grid;grid-template-columns:1fr 250px;gap:10px}.two{grid-template-columns:1fr 1fr}
 .note{min-height:130px;background:#fff1b9;border:1px solid #c99e57;padding:15px;box-shadow:4px 4px 0 rgba(90,55,30,.12)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#a44268}
 .state{background:#f9e0e8;border:1px solid #d17697;padding:10px}.state b{color:#b83f6d}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:1px solid #d17697;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
-.card:hover{background:#ffe7ef;text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:2px outset #d4a5b5;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
+.card:hover{background:#ffe7ef;border-style:inset;text-decoration:none}
 .content-list{min-height:120px}.entry{padding:8px 0;border-bottom:1px dotted #d17697}.entry:last-child{border:0}.entry b{color:#b83f6d}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.photo{height:120px;background:#f5d7e1;border:2px solid #d17697;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;cursor:pointer;transition:all .3s}
-.photo:hover{border-color:#c74d78;transform:scale(1.03);box-shadow:4px 4px 0 rgba(140,69,98,.2)}
+.photo{height:110px;background:#f5d7e1;border:2px outset #d4a5b5;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;cursor:pointer}
+.photo:hover{border-color:#c74d78;border-style:inset}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-label{position:absolute;bottom:0;left:0;right:0;background:rgba(199,77,120,.7);color:#fff;font-size:11px;padding:3px;opacity:0;transition:opacity .3s}
+.photo-label{position:absolute;bottom:0;left:0;right:0;background:rgba(199,77,120,.75);color:#fff;font-size:11px;padding:3px;opacity:0}
 .photo:hover .photo-label{opacity:1}
 .timeline .entry{position:relative;padding-left:18px}.timeline .entry:before{content:"";position:absolute;left:3px;top:12px;width:7px;height:7px;border:1px solid #b83f6d;background:#fff;border-radius:50%}
 .footer{text-align:center;margin:10px;padding:12px;background:#ffe8f0;border:3px double #d17697}.secret{opacity:.45;cursor:pointer}
 #home,#longDiary,#album,#music,#thoughts,#timeline{scroll-margin-top:60px}
 .music{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center}
-.disc{width:55px;height:55px;border-radius:50%;background:#6d2f49;border:5px solid #d986a4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s}
+.disc{width:52px;height:52px;border-radius:50%;background:#6d2f49;border:5px outset #d986a4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:transform .3s}
 .disc.playing{animation:spin 3s linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .music-controls{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
-.music-btn{padding:5px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.music-btn{padding:5px 12px;border:2px outset #d4a5b5;background:#f9dbe6;color:#673047;cursor:pointer;font:12px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
 .music-btn:hover{background:#f2b1c7}
-.music-btn.active{background:#c74d78;color:#fff}
-.progress-bar{width:100%;height:8px;background:#f0d0dc;border:1px solid #d17697;margin-top:10px;cursor:pointer}
-.progress-fill{height:100%;background:#c74d78;width:0%;transition:width .2s}
+.music-btn:active{border-style:inset}
+.music-btn.active{background:#c74d78;color:#fff;border-style:inset}
+.progress-bar{width:100%;height:8px;background:#f0d0dc;border:1px inset #d17697;margin-top:10px;cursor:pointer}
+.progress-fill{height:100%;background:#c74d78;width:0%}
 .song-title{color:#b83f6d;font-weight:bold;font-size:14px}
 .song-info{font-size:11px;color:#a88;margin-top:3px}
 .time-display{font-size:11px;color:#a88;margin-top:5px;text-align:right}
 .volume-control{display:flex;align-items:center;gap:8px;margin-top:10px}
-.volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f0d0dc;border:1px solid #d17697;outline:none;cursor:pointer}
-.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#c74d78;border:2px solid #fff;border-radius:50%;cursor:pointer}
+.volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f0d0dc;border:1px inset #d17697;outline:none;cursor:pointer}
+.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#c74d78;border:2px outset #e8a0bb;cursor:pointer}
 .volume-percent{font-size:11px;color:#a88;min-width:30px;text-align:right}
 .long-diary{margin-top:10px}.long-diary .window-body{padding:14px 16px}
 .diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}.diary-paper:last-child{margin-bottom:0}
 .diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
-.admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fff4f7;color:#8c4562;border:2px solid #8c4562;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
+.admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fff4f7;color:#8c4562;border:2px outset #d4a5b5;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
+.admin-open:active{border-style:inset}
 .egg-open{position:fixed;left:18px;bottom:18px;z-index:999;color:#8c4562;background:#fff4f7;border:1px dotted #b85a7d;padding:6px 10px;cursor:pointer;opacity:.7;font-family:"Courier New","Microsoft YaHei",monospace;font-size:18px}
 .gate,.egg{position:fixed;inset:0;background:rgba(54,27,40,.72);display:none;align-items:center;justify-content:center;z-index:1000}
-.panel{width:400px;background:#fff8ee;border:3px double #673047;box-shadow:10px 10px 0 rgba(20,10,15,.3)}
+.panel{width:400px;background:#fff8ee;border:3px double #673047;box-shadow:8px 8px 0 rgba(20,10,15,.3)}
 .panel-title{background:#c74d78;color:#fff;padding:7px 9px;font-weight:bold}
 .panel-body{padding:18px}.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #b85a7d;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
-.panel-body button{padding:7px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.panel-body button{padding:7px 12px;border:2px outset #d4a5b5;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.panel-body button:active{border-style:inset}
 .egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
 .close-btn{float:right;cursor:pointer;font-weight:bold}
-#splash{position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
+#splash{position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#d9a890 1px,transparent 1px),radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
 .fall{position:fixed;top:-30px;animation:fall linear infinite;pointer-events:none;opacity:.85;z-index:1}
 @keyframes fall{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
+.blink{animation:blink 1.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 </style>
 </head>
 <body>
@@ -77,17 +85,17 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <!-- 开屏 -->
 <div id="splash">
   <div id="fallContainer" style="position:fixed;inset:0;pointer-events:none;z-index:1;"></div>
-  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);display:flex;flex-direction:column;position:relative;z-index:2;">
+  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:8px 8px 0 rgba(80,35,55,.25);display:flex;flex-direction:column;position:relative;z-index:2;">
     <div style="background:#c74d78;color:#fff;padding:8px 10px;font-weight:bold;border-bottom:2px solid #673047;">
       MIOKI // PRIVATE DESKTOP
       <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;">×</a></span>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px 5px;transform:translateY(8px);">
-      <div style="font:55px Georgia,serif;color:#c74d78;letter-spacing:10px;text-shadow:3px 3px 0 #f2b1c7;">HELLO MIOKI</div>
+      <div style="font:55px Georgia,serif;color:#c74d78;letter-spacing:10px;text-shadow:3px 3px 0 #f2b1c7;" id="typeText"></div>
       <p style="color:#b83f6d;font-size:13px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
       <div style="margin-top:10px;font:19px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
       <div style="font-size:10px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
-      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">✦ 点击进入 ✦</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#f9dbe6;color:#673047;border:3px outset #d4a5b5;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;">✦ 点击进入 ✦</div>
     </div>
     <div style="text-align:center;color:#d4a0b8;font-size:9px;letter-spacing:5px;padding:2px 0;">◆ ◇ ◆ ◇ ◆</div>
     <div style="padding:8px 15px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
@@ -103,7 +111,16 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 
 <div class="shell">
 <div class="topbar">MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
-<div class="hero"><h1>MIOKI</h1><div class="tag">welcome to my little internet</div><p>一个属于 Mioki 的小小网络角落。</p></div>
+
+<div class="hero">
+    <marquee scrollamount="2" style="color:#fff8ee;font-size:12px;position:absolute;top:6px;left:10px;width:60%;">
+        ✨ 欢迎来到 Mioki 的小小网络角落 ✨ 本站最后更新：2026.08.27 ✨ 随便逛逛，不用着急 ✨
+    </marquee>
+    <h1 id="heroType"></h1>
+    <div class="tag">welcome to my little internet</div>
+    <p style="color:#fff8ee;margin-top:8px;">一个属于 Mioki 的小小网络角落。</p>
+</div>
+
 <div class="status">♫ currently listening: <span id="statusSong">未播放</span>　|　🕰 <span id="currentTime">00:00:00</span>　|　last update: 2026.08.27</div>
 <div class="desktop">
 <aside>
@@ -150,7 +167,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
   <div class="window-title">LITTLE THOUGHTS <span>THOUGHTS</span></div>
   <div class="window-body content-list" id="thoughtsList"></div>
   <div style="text-align:center;padding:5px 10px 10px;">
-    <button id="toggleThoughts" onclick="toggleThoughts()" style="display:none;padding:6px 14px;background:#f9dbe6;color:#673047;border:2px solid #8c4562;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+    <button id="toggleThoughts" onclick="toggleThoughts()" style="display:none;padding:6px 14px;background:#f9dbe6;color:#673047;border:2px outset #d4a5b5;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
   </div>
 </div>
 
@@ -159,7 +176,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
   <div class="window-body">
     <div class="photo-grid" id="photoGrid"></div>
     <div style="text-align:center;margin-top:10px;">
-      <button id="togglePhotos" onclick="togglePhotos()" style="padding:6px 14px;background:#f9dbe6;color:#673047;border:2px solid #8c4562;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+      <button id="togglePhotos" onclick="togglePhotos()" style="padding:6px 14px;background:#f9dbe6;color:#673047;border:2px outset #d4a5b5;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
     </div>
   </div>
 </div>
@@ -183,7 +200,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <section class="window long-diary" id="longDiary"><div class="window-title">MY DIARY <span>DIARY</span></div><div class="window-body" id="diaryList"></div></section>
 </main>
 </div>
-<div class="footer">made with love by Mioki　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
+<div class="footer">made with love by Mioki　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret blink" onclick="openEgg()">✦</span></div>
 </div>
 
 <button class="admin-open" id="adminBtn">🖥️ 管理</button>
@@ -343,12 +360,44 @@ function updateSplashTime(){
   $('splashTime').textContent = time;
   $('splashDate').textContent = date;
 }
+function typeEffect(){
+  var text = 'HELLO MIOKI';
+  var el = $('typeText');
+  if(!el) return;
+  var i = 0;
+  el.textContent = '';
+  var timer = setInterval(function(){
+    if(i < text.length){
+      el.textContent += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, 150);
+}
+function typeEffectHero(){
+  var text = 'MIOKI';
+  var el = $('heroType');
+  if(!el) return;
+  var i = 0;
+  el.textContent = '';
+  var timer = setInterval(function(){
+    if(i < text.length){
+      el.textContent += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, 200);
+}
 document.addEventListener('DOMContentLoaded',function(){
   updateSplashTime();setInterval(updateSplashTime,1000);
+  typeEffect();
+  setTimeout(typeEffectHero, 600);
   var symbols=['✦','♡','❀'];var colors=['#c74d78','#d17697','#e8a0bb'];var container=$('fallContainer');var count=10;
   for(var i=0;i<count;i++){
     var el=document.createElement('span');el.className='fall';el.textContent=symbols[i%symbols.length];
-    el.style.left=(i/count*100)+'%';el.style.fontSize=(20+(i%3)*6)+'px';el.style.color=colors[i%colors.length];
+    el.style.left=(i/count*100)+'%';el.style.fontSize=(18+(i%3)*5)+'px';el.style.color=colors[i%colors.length];
     el.style.animationDuration=(i%3+7)+'s';el.style.animationDelay=(i*0.8)+'s';container.appendChild(el);
   }
   loadSavedData();loadPhotos();renderThoughts();renderDiary();renderTimeline();
