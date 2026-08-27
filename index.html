@@ -70,6 +70,39 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 </style>
 </head>
 <body>
+
+<!-- 开屏 -->
+<div id="splash" style="position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);display:flex;flex-direction:column;">
+    <div style="background:#c74d78;color:#fff;padding:10px;font-weight:bold;border-bottom:2px solid #673047;">
+      ♡ MIOKI // PRIVATE DESKTOP
+      <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;cursor:pointer;">×</a></span>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;">
+      <div style="font:60px Georgia,serif;color:#c74d78;letter-spacing:12px;text-shadow:3px 3px 0 #f2b1c7;">♡ MIOKI ♡</div>
+      <p style="color:#b83f6d;font-size:16px;letter-spacing:3px;margin-top:10px;">welcome to my little internet</p>
+      <div style="margin-top:20px;font:28px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
+      <div style="font-size:12px;color:#d4a0b8;margin-top:3px;" id="splashDate">2026.08.27</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:20px;padding:10px 30px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;letter-spacing:2px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">
+        ✦ 点击进入 ✦
+      </div>
+      <p style="color:#d4a0b8;font-size:10px;margin-top:15px;letter-spacing:2px;">♡ made with love by Mioki ♡</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function updateSplashTime(){
+  var n = new Date();
+  var time = String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0') + ':' + String(n.getSeconds()).padStart(2,'0');
+  var date = n.getFullYear() + '.' + String(n.getMonth()+1).padStart(2,'0') + '.' + String(n.getDate()).padStart(2,'0');
+  document.getElementById('splashTime').textContent = time;
+  document.getElementById('splashDate').textContent = date;
+}
+updateSplashTime();
+setInterval(updateSplashTime, 1000);
+</script>
+
 <div class="shell">
 <div class="topbar">♡ MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
 <div class="hero"><h1>MIOKI</h1><div class="tag">welcome to my little internet ♡</div><p>一个属于 Mioki 的小小网络角落。</p></div>
@@ -198,13 +231,11 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 
 <script>
 function $(id){return document.getElementById(id)}
-
 function loadSavedData(){
   var profile = JSON.parse(localStorage.getItem('mioki_profile'));
   if(profile){
     if(profile.bio) $('profileBio').textContent = profile.bio;
     if(profile.mood) $('profileMood').textContent = '♡ mood: ' + profile.mood;
-    if(profile.name) $('profileName') && ($('profileName').textContent = profile.name);
   }
   var status = JSON.parse(localStorage.getItem('mioki_status'));
   if(status) $('profileStatus').textContent = status;
@@ -214,8 +245,6 @@ function loadSavedData(){
     if(welcome.text) $('welcomeText').textContent = welcome.text;
   }
 }
-
-// 相册
 var allPhotos = [];
 var showAllPhotos = false;
 function loadPhotos(){
@@ -243,11 +272,7 @@ function renderPhotos(){
   $('togglePhotos').textContent = showAllPhotos ? '♡ 收起' : '✦ 展开更多 (' + (allPhotos.length - 3) + '张)';
   $('togglePhotos').style.display = allPhotos.length > 3 ? 'inline-block' : 'none';
 }
-function togglePhotos(){
-  showAllPhotos = !showAllPhotos;
-  renderPhotos();
-}
-
+function togglePhotos(){showAllPhotos = !showAllPhotos;renderPhotos();}
 var playlist = JSON.parse(localStorage.getItem('mioki_songs')) || [{title:"Killer Neuron",artist:"藍月なくる",src:"https://2050374994-sys.github.io/mioki.github.io/KillerNeuron.mp3"}];
 var currentTrack=0,isPlaying=false,audio=new Audio();
 function setVolume(v){audio.volume=v/100;$('volumePercent').textContent=v+'%'}
