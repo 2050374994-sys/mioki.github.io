@@ -6,9 +6,9 @@
 <title>MIOKI // PRIVATE WEB DESKTOP</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><polygon points="2,2 20,10 12,12 10,20" fill="%23c74d78" stroke="%23fff" stroke-width="1.5"/></svg>') 2 2, auto}
+body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px}
 a{color:#b83f6d;text-decoration:none}a:hover{text-decoration:underline}
-a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><polygon points="2,2 20,10 12,12 10,20" fill="%23f2b1c7" stroke="%23c74d78" stroke-width="1.5"/></svg>') 2 2, pointer}
+a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.card{cursor:pointer}
 ::-webkit-scrollbar{width:12px}
 ::-webkit-scrollbar-track{background:#fff0f5;border:1px dotted #d17697}
 ::-webkit-scrollbar-thumb{background:#d17697;border-radius:6px;border:2px solid #fff0f5}
@@ -67,7 +67,6 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .panel-body button{padding:7px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
 .egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
 .close-btn{float:right;cursor:pointer;font-weight:bold}
-/* 开屏 */
 #splash{position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
 .fall{position:fixed;top:-30px;animation:fall linear infinite;pointer-events:none;opacity:.85;z-index:1}
 @keyframes fall{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
@@ -77,29 +76,27 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 
 <!-- 开屏 -->
 <div id="splash">
-  <div id="fallContainer"></div>
+  <div id="fallContainer" style="position:fixed;inset:0;pointer-events:none;z-index:1;"></div>
   <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);display:flex;flex-direction:column;position:relative;z-index:2;">
-    <div style="background:#c74d78;color:#fff;padding:10px;font-weight:bold;border-bottom:2px solid #673047;">
+    <div style="background:#c74d78;color:#fff;padding:8px 10px;font-weight:bold;border-bottom:2px solid #673047;">
       MIOKI // PRIVATE DESKTOP
-      <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;cursor:pointer;">×</a></span>
+      <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;">×</a></span>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px 10px 20px;transform:translateY(10px);">
-      <div style="font:50px Georgia,serif;color:#c74d78;letter-spacing:12px;text-shadow:3px 3px 0 #f2b1c7;">MIOKI</div>
-      <p style="color:#b83f6d;font-size:14px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
-      <div style="margin-top:15px;font:24px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
-      <div style="font-size:11px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
-      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:20px;padding:8px 25px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;letter-spacing:2px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">
-        ✦ 点击进入 ✦
-      </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5px 20px;">
+      <div style="font:45px Georgia,serif;color:#c74d78;letter-spacing:12px;text-shadow:3px 3px 0 #f2b1c7;">MIOKI</div>
+      <p style="color:#b83f6d;font-size:13px;letter-spacing:3px;margin-top:5px;">welcome to my little internet</p>
+      <div style="margin-top:10px;font:22px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
+      <div style="font-size:10px;color:#d4a0b8;margin-top:1px;" id="splashDate">2026.08.27</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:10px;padding:6px 20px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;letter-spacing:2px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">✦ 点击进入 ✦</div>
     </div>
-    <div style="text-align:center;color:#d4a0b8;font-size:10px;letter-spacing:5px;">◆ ◇ ◆ ◇ ◆</div>
-    <div style="padding:12px 15px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
-      <span style="color:#d4a0b8;font-size:11px;padding:5px;">常用：</span>
-      <a href="https://www.bilibili.com/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📺 B站</a>
-      <a href="https://xn--iao3-lw4b.ws/languages/zh/works" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 AO3</a>
-      <a href="https://chat.deepseek.com/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">🤖 DeepSeek</a>
-      <a href="https://www.doubao.com/chat/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">💬 豆包</a>
-      <a href="http://jwcnew.wxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 教务系统</a>
+    <div style="text-align:center;color:#d4a0b8;font-size:9px;letter-spacing:5px;padding:2px 0;">◆ ◇ ◆ ◇ ◆</div>
+    <div style="padding:8px 15px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
+      <span style="color:#d4a0b8;font-size:11px;padding:3px;">常用：</span>
+      <a href="https://www.bilibili.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📺 B站</a>
+      <a href="https://xn--iao3-lw4b.ws/languages/zh/works" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 AO3</a>
+      <a href="https://chat.deepseek.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">🤖 DeepSeek</a>
+      <a href="https://www.doubao.com/chat/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">💬 豆包</a>
+      <a href="http://jwcnew.wxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 教务系统</a>
     </div>
   </div>
 </div>
