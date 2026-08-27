@@ -83,11 +83,11 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
       <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;">×</a></span>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px 5px;transform:translateY(8px);">
-  <div style="font:55px Georgia,serif;color:#c74d78;letter-spacing:10px;text-shadow:3px 3px 0 #f2b1c7;">HELLO MIOKI</div>
-  <p style="color:#b83f6d;font-size:13px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
-  <div style="margin-top:10px;font:19px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
-  <div style="font-size:10px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
-  <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">✦ 点击进入 ✦</div>
+      <div style="font:55px Georgia,serif;color:#c74d78;letter-spacing:10px;text-shadow:3px 3px 0 #f2b1c7;">HELLO MIOKI</div>
+      <p style="color:#b83f6d;font-size:13px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
+      <div style="margin-top:10px;font:19px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
+      <div style="font-size:10px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">✦ 点击进入 ✦</div>
     </div>
     <div style="text-align:center;color:#d4a0b8;font-size:9px;letter-spacing:5px;padding:2px 0;">◆ ◇ ◆ ◇ ◆</div>
     <div style="padding:8px 15px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
@@ -146,11 +146,13 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <a class="card" href="#music"><span class="ico">♫</span>我的音乐</a>
 </div></div>
 
-<div class="window" id="thoughts"><div class="window-title">LITTLE THOUGHTS <span>THOUGHTS</span></div><div class="window-body content-list" id="thoughtsList">
-<div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料</div>
-<div class="entry"><b>08.25</b>　最近一直在循环一首很喜欢的歌。</div>
-<div class="entry"><b>08.21</b>　一些乱七八糟的小想法</div>
-</div></div>
+<div class="window" id="thoughts">
+  <div class="window-title">LITTLE THOUGHTS <span>THOUGHTS</span></div>
+  <div class="window-body content-list" id="thoughtsList"></div>
+  <div style="text-align:center;padding:5px 10px 10px;">
+    <button id="toggleThoughts" onclick="toggleThoughts()" style="display:none;padding:6px 14px;background:#f9dbe6;color:#673047;border:2px solid #8c4562;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+  </div>
+</div>
 
 <div class="window" id="album">
   <div class="window-title">PHOTO ALBUM <span>ALBUM</span></div>
@@ -175,16 +177,10 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <div class="volume-control"><span>🔊</span><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70"><span class="volume-percent" id="volumePercent">70%</span></div>
 <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
 </div></div>
-<div class="window" id="timeline"><div class="window-title">TIMELINE</div><div class="window-body timeline">
-<div class="entry"><b>2026.08.27</b><br>网站优化完成</div>
-<div class="entry"><b>2026.08.26</b><br>网站正式建立</div>
-<div class="entry"><b>2026.08.25</b><br>开始构思网站内容</div>
-</div></div>
+<div class="window" id="timeline"><div class="window-title">TIMELINE</div><div class="window-body timeline" id="timelineList"></div></div>
 </div>
 
-<section class="window long-diary" id="longDiary"><div class="window-title">MY DIARY <span>DIARY</span></div><div class="window-body">
-<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>
-</div></section>
+<section class="window long-diary" id="longDiary"><div class="window-title">MY DIARY <span>DIARY</span></div><div class="window-body" id="diaryList"></div></section>
 </main>
 </div>
 <div class="footer">made with love by Mioki　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
@@ -271,6 +267,53 @@ function renderPhotos(){
   $('togglePhotos').style.display = allPhotos.length > 3 ? 'inline-block' : 'none';
 }
 function togglePhotos(){showAllPhotos = !showAllPhotos;renderPhotos();}
+var allThoughts = JSON.parse(localStorage.getItem('mioki_thoughts')) || [
+  {date:'08.27', text:'今天的天气让人想喝冰冰的饮料'},
+  {date:'08.25', text:'最近一直在循环一首很喜欢的歌。'},
+  {date:'08.21', text:'一些乱七八糟的小想法'}
+];
+var showAllThoughts = false;
+function renderThoughts(){
+  var list = $('thoughtsList');
+  var showCount = showAllThoughts ? allThoughts.length : 8;
+  var html = '';
+  for(var i = 0; i < allThoughts.length && i < showCount; i++){
+    html += '<div class="entry"><b>' + allThoughts[i].date + '</b>　' + allThoughts[i].text + '</div>';
+  }
+  list.innerHTML = html;
+  var btn = $('toggleThoughts');
+  if(allThoughts.length > 8){
+    btn.style.display = 'inline-block';
+    btn.textContent = showAllThoughts ? '收起' : '✦ 展开更多 (' + (allThoughts.length - 8) + '条)';
+  } else {
+    btn.style.display = 'none';
+  }
+}
+function toggleThoughts(){showAllThoughts = !showAllThoughts;renderThoughts();}
+function renderDiary(){
+  var diaries = JSON.parse(localStorage.getItem('mioki_diaries')) || [];
+  var html = '';
+  if(diaries.length === 0){
+    html = '<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>';
+  } else {
+    diaries.forEach(function(d){
+      html += '<article class="diary-paper"><div class="diary-meta">' + d.date + '　心情：' + d.mood + '</div><h2>' + d.title + '</h2><p>' + d.content + '</p></article>';
+    });
+  }
+  $('diaryList').innerHTML = html;
+}
+function renderTimeline(){
+  var timelines = JSON.parse(localStorage.getItem('mioki_timelines')) || [
+    {date:'2026.08.27', text:'网站优化完成'},
+    {date:'2026.08.26', text:'网站正式建立'},
+    {date:'2026.08.25', text:'开始构思网站内容'}
+  ];
+  var html = '';
+  timelines.forEach(function(t){
+    html += '<div class="entry"><b>' + t.date + '</b><br>' + t.text + '</div>';
+  });
+  $('timelineList').innerHTML = html;
+}
 var playlist = JSON.parse(localStorage.getItem('mioki_songs')) || [{title:"Killer Neuron",artist:"藍月なくる",src:"https://2050374994-sys.github.io/mioki.github.io/KillerNeuron.mp3"}];
 var currentTrack=0,isPlaying=false,audio=new Audio();
 function setVolume(v){audio.volume=v/100;$('volumePercent').textContent=v+'%'}
@@ -308,7 +351,7 @@ document.addEventListener('DOMContentLoaded',function(){
     el.style.left=(i/count*100)+'%';el.style.fontSize=(20+(i%3)*6)+'px';el.style.color=colors[i%colors.length];
     el.style.animationDuration=(i%3+7)+'s';el.style.animationDelay=(i*0.8)+'s';container.appendChild(el);
   }
-  loadSavedData();loadPhotos();
+  loadSavedData();loadPhotos();renderThoughts();renderDiary();renderTimeline();
   $('adminBtn').addEventListener('click',openAdmin);
   $('btnPlay').addEventListener('click',togglePlay);
   $('btnStop').addEventListener('click',stopMusic);
