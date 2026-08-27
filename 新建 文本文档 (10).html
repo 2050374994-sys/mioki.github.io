@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1100">
+<title>♡ MIOKI // PRIVATE WEB DESKTOP ♡</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><polygon points="2,2 20,10 12,12 10,20" fill="%23c74d78" stroke="%23fff" stroke-width="1.5"/></svg>') 2 2, auto}
+a{color:#b83f6d;text-decoration:none}a:hover{text-decoration:underline}
+a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><polygon points="2,2 20,10 12,12 10,20" fill="%23f2b1c7" stroke="%23c74d78" stroke-width="1.5"/></svg>') 2 2, pointer}
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{background:#fff0f5;border:1px dotted #d17697}
+::-webkit-scrollbar-thumb{background:#d17697;border-radius:6px;border:2px solid #fff0f5}
+::-webkit-scrollbar-thumb:hover{background:#c74d78}
+.shell{width:1060px;margin:28px auto 60px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3)}
+.topbar{height:40px;padding:8px 11px;background:#c74d78;color:#fff;border-bottom:2px solid #673047;font-weight:bold}.topbar span{float:right;letter-spacing:4px}
+.hero{margin:10px;padding:25px 30px;height:230px;border:2px dashed #d17697;background:linear-gradient(135deg,#f2b1c7,#eca0bb 55%,#f6c8d8);position:relative;overflow:hidden}
+.hero:before{content:"♡  ✦  ♡  ✦  ♡  ✦  ♡";position:absolute;right:22px;top:16px;color:#fff;font-size:17px;letter-spacing:6px}.hero:after{content:"1999 — 2000 — 2026";position:absolute;right:24px;bottom:17px;color:#fff8fb}
+.hero h1{margin:5px 0 0;font:76px Georgia,serif;letter-spacing:10px;color:#fff;text-shadow:4px 4px 0 #a43e64}.tag{display:inline-block;background:#fff4f7;border:1px solid #c75b81;padding:3px 10px;margin-top:8px}
+.status{margin:0 10px 10px;padding:6px 9px;background:#fff0f5;border:1px dotted #d17697;white-space:nowrap;overflow:hidden;text-align:center}
+.desktop{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:0 10px}.window{background:#fffdf8;border:2px solid #8c4562;box-shadow:4px 4px 0 rgba(140,69,98,.16);margin-bottom:10px}.window-title{background:#c74d78;color:#fff;padding:5px 8px;font-weight:bold}.window-title span{float:right}.window-body{padding:10px}
+.avatar{height:150px;border:2px dotted #d17697;background:#f7d8e3;display:flex;align-items:center;justify-content:center;text-align:center;font:20px Georgia,serif;color:#bd5279;margin-bottom:8px}
+.menu a{display:block;padding:5px 7px;border-bottom:1px dotted #d9a0b4}.menu a:hover{background:#ffe7ef;text-decoration:none}
+.badge{display:inline-block;padding:2px 5px;margin:2px;border:1px solid #8c4562;background:#fff0f5;font-size:10px}.counter{background:#422433;color:#fff;text-align:center;padding:3px;letter-spacing:4px}
+.main{min-width:0}.welcome-grid,.two{display:grid;grid-template-columns:1fr 250px;gap:10px}.two{grid-template-columns:1fr 1fr}
+.note{min-height:130px;background:#fff1b9;border:1px solid #c99e57;transform:rotate(-.6deg);padding:15px;box-shadow:4px 4px 0 rgba(90,55,30,.12)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#a44268}
+.state{background:#f9e0e8;border:1px solid #d17697;padding:10px}.state b{color:#b83f6d}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:1px solid #d17697;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
+.card:hover{background:#ffe7ef;text-decoration:none}
+.content-list{min-height:120px}.entry{padding:8px 0;border-bottom:1px dotted #d17697}.entry:last-child{border:0}.entry b{color:#b83f6d}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.photo{height:120px;background:#f5d7e1;border:2px solid #d17697;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;cursor:pointer;transition:all .3s}
+.photo:hover{border-color:#c74d78;transform:scale(1.03);box-shadow:4px 4px 0 rgba(140,69,98,.2)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-label{position:absolute;bottom:0;left:0;right:0;background:rgba(199,77,120,.7);color:#fff;font-size:11px;padding:3px;opacity:0;transition:opacity .3s}
+.photo:hover .photo-label{opacity:1}
+.timeline .entry{position:relative;padding-left:18px}.timeline .entry:before{content:"";position:absolute;left:3px;top:12px;width:7px;height:7px;border:1px solid #b83f6d;background:#fff;border-radius:50%}
+.footer{text-align:center;margin:10px;padding:12px;background:#ffe8f0;border:3px double #d17697}.secret{opacity:.45;cursor:pointer}
+#home,#longDiary,#album,#music,#thoughts,#timeline,#guestbook{scroll-margin-top:60px}
+.music{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center}
+.disc{width:55px;height:55px;border-radius:50%;background:#6d2f49;border:5px solid #d986a4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s}
+.disc.playing{animation:spin 3s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.music-controls{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.music-btn{padding:5px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.music-btn:hover{background:#f2b1c7}
+.music-btn.active{background:#c74d78;color:#fff}
+.progress-bar{width:100%;height:8px;background:#f0d0dc;border:1px solid #d17697;margin-top:10px;cursor:pointer}
+.progress-fill{height:100%;background:#c74d78;width:0%;transition:width .2s}
+.song-title{color:#b83f6d;font-weight:bold;font-size:14px}
+.song-info{font-size:11px;color:#a88;margin-top:3px}
+.time-display{font-size:11px;color:#a88;margin-top:5px;text-align:right}
+.volume-control{display:flex;align-items:center;gap:8px;margin-top:10px}
+.volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f0d0dc;border:1px solid #d17697;outline:none;cursor:pointer}
+.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#c74d78;border:2px solid #fff;border-radius:50%;cursor:pointer}
+.volume-percent{font-size:11px;color:#a88;min-width:30px;text-align:right}
+.guestbook-wrapper{margin-top:12px}
+.guestbook-wrapper input,.guestbook-wrapper textarea{font-family:"Comic Sans MS","华文细黑","Microsoft YaHei",cursive !important;border:2px dotted #d17697 !important;background:#fffdf8 !important;color:#673047 !important;padding:10px !important;font-size:13px !important}
+.guestbook-wrapper button{background:#f9dbe6 !important;color:#673047 !important;border:2px solid #8c4562 !important;font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;padding:8px 16px !important;cursor:pointer !important}
+.guestbook-wrapper .cusdis-comment-content{font-family:"Comic Sans MS","华文细黑","Microsoft YaHei",cursive !important;font-size:14px !important;line-height:1.9 !important;color:#5a2d40 !important}
+.guestbook-wrapper .cusdis-comment-author{font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;color:#c74d78 !important}
+.long-diary{margin-top:10px}
+.long-diary .window-body{padding:14px 16px}
+.diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}
+.diary-paper:last-child{margin-bottom:0}
+.diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}
+.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
+.admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fff4f7;color:#8c4562;border:2px solid #8c4562;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
+.egg-open{position:fixed;left:18px;bottom:18px;z-index:999;color:#8c4562;background:#fff4f7;border:1px dotted #b85a7d;padding:6px 10px;cursor:pointer;opacity:.7;font-family:"Courier New","Microsoft YaHei",monospace;font-size:18px}
+.gate,.egg{position:fixed;inset:0;background:rgba(54,27,40,.72);display:none;align-items:center;justify-content:center;z-index:1000}
+.panel{width:400px;background:#fff8ee;border:3px double #673047;box-shadow:10px 10px 0 rgba(20,10,15,.3)}
+.panel-title{background:#c74d78;color:#fff;padding:7px 9px;font-weight:bold}
+.panel-body{padding:18px}
+.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #b85a7d;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
+.panel-body button{padding:7px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
+.close-btn{float:right;cursor:pointer;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="topbar">♡ MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
+<div class="hero"><h1>MIOKI</h1><div class="tag">welcome to my little internet ♡</div><p>一个属于 Mioki 的小小网络角落。</p></div>
+<div class="status">♫ currently listening: <span id="statusSong">未播放</span>　|　🕰 <span id="currentTime">00:00:00</span>　|　last update: 2026.08.27</div>
+<div class="desktop">
+<aside>
+<div class="window"><div class="window-title">♡ PROFILE <span>_ □</span></div><div class="window-body">
+<div class="avatar">M<br>I<br>O<br>K<br>I<br>♡</div><b>Mioki</b><br><span style="color:#5c8b68">● online</span><br><br><span style="color:#b83f6d;">♡ mood: dreamy</span><br><br>喜欢粉色、音乐、<br>一些漂亮的小东西。
+<br><br>
+<div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;">
+  <span style="font-size:11px;color:#a88;">♡ 本站已运行</span><br>
+  <span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span>
+  <span style="font-size:11px;color:#a88;">天</span>
+</div>
+</div></div>
+
+<div class="window"><div class="window-title">MENU <span>✦</span></div><div class="window-body menu">
+<a href="#home">♡ HOME / 首页</a>
+<a href="#longDiary">📖 MY DIARY / 日记</a>
+<a href="#album">📷 ALBUM / 相册</a>
+<a href="#music">♫ MUSIC / 音乐</a>
+<a href="#thoughts">💭 THOUGHTS / 碎碎念</a>
+<a href="#timeline">🕰 TIMELINE / 时间轴</a>
+<a href="#guestbook">💌 GUESTBOOK / 留言</a>
+<a href="https://user.qzone.qq.com/2050374994" target="_blank">🌟 QQ空间</a>
+<a href="https://music.163.com/#/user/home?id=8744058484" target="_blank">🎵 网易云音乐</a>
+<a href="https://www.douyin.com/user/46033301058" target="_blank">🎬 抖音</a>
+</div></div>
+
+<div class="window"><div class="window-title">♡ MY HOBBIES <span>✦</span></div><div class="window-body">
+<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="openPuzzle()">🧩 网页解谜 →</div>
+<div class="entry">🎨 画画</div>
+<div class="entry">📺 追番</div>
+<div class="entry">☁️ 发呆</div>
+</div></div>
+
+<div class="window"><div class="window-title">WEB BADGES</div><div class="window-body"><span class="badge">90s WEB</span><span class="badge">♡ PINK</span><span class="badge">PERSONAL</span><span class="badge">BEST VIEWED</span></div></div>
+<div class="window"><div class="window-title">VISITOR</div><div class="window-body"><div class="counter" id="visitorCounter">000127</div></div></div>
+</aside>
+<main class="main" id="home">
+<div class="welcome-grid">
+<div class="window"><div class="window-title">♡ WELCOME <span>HOME</span></div><div class="window-body note"><h2>你好，欢迎来到这里 ♡</h2>这里不是一个普通的网站。<br>它更像是一间放在互联网上的小房间。<br><br>可以写日记、放照片、收藏喜欢的歌，<br>也可以什么都不做，只是偶尔回来看看。</div></div>
+<div class="window"><div class="window-title">NOW</div><div class="window-body state"><b>♡ TODAY'S MOOD</b><br>soft & dreamy<br><br><b>♡ STATUS</b><br>making my little web<br><br><b>♡ LOCATION</b><br>somewhere in pink clouds</div></div>
+</div>
+<div class="window"><div class="window-title">QUICK ACCESS</div><div class="window-body cards">
+<a class="card" href="#longDiary"><span class="ico">📖</span>我的日记</a>
+<a class="card" href="#album"><span class="ico">📷</span>我的相册</a>
+<a class="card" href="#music"><span class="ico">♫</span>我的音乐</a>
+<a class="card" href="#guestbook"><span class="ico">💌</span>访客留言</a>
+</div></div>
+
+<div class="window" id="thoughts">
+  <div class="window-title">💭 LITTLE THOUGHTS <span>THOUGHTS</span></div>
+  <div class="window-body content-list">
+    <div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料 ♡</div>
+    <div class="entry"><b>08.25</b>　最近一直在循环一首很喜欢的歌。</div>
+    <div class="entry"><b>08.21</b>　一些乱七八糟的小想法 ✦</div>
+  </div>
+</div>
+
+<div class="window" id="album">
+  <div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div>
+  <div class="window-body photo-grid">
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=1')"><img src="https://picsum.photos/400/300?random=1" loading="lazy"><span class="photo-label">♡ 照片一</span></div>
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=2')"><img src="https://picsum.photos/400/300?random=2" loading="lazy"><span class="photo-label">✦ 照片二</span></div>
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=3')"><img src="https://picsum.photos/400/300?random=3" loading="lazy"><span class="photo-label">♡ 照片三</span></div>
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=4')"><img src="https://picsum.photos/400/300?random=4" loading="lazy"><span class="photo-label">✦ 照片四</span></div>
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=5')"><img src="https://picsum.photos/400/300?random=5" loading="lazy"><span class="photo-label">♡ 照片五</span></div>
+    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=6')"><img src="https://picsum.photos/400/300?random=6" loading="lazy"><span class="photo-label">✦ 照片六</span></div>
+  </div>
+</div>
+
+<div class="two">
+  <div class="window" id="music">
+    <div class="window-title">♫ NOW PLAYING <span>MUSIC</span></div>
+    <div class="window-body">
+      <div class="music"><div class="disc" id="discIcon">♫</div><div><div class="song-title" id="songTitle">未选择歌曲</div><div class="song-info" id="songInfo">点击播放按钮开始 ♫</div></div></div>
+      <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="music-controls">
+        <button class="music-btn" id="btnPrev">◀◀</button>
+        <button class="music-btn" id="btnPlay">▶ 播放</button>
+        <button class="music-btn" id="btnStop">■ 停止</button>
+        <button class="music-btn" id="btnNext">▶▶</button>
+      </div>
+      <div class="volume-control"><span>🔊</span><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70"><span class="volume-percent" id="volumePercent">70%</span></div>
+      <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+    </div>
+  </div>
+  <div class="window" id="timeline"><div class="window-title">🕰 TIMELINE</div><div class="window-body timeline">
+    <div class="entry"><b>2026.08</b><br>开始慢慢制作这个小网站。</div>
+    <div class="entry"><b>2026.07</b><br>留下一个夏天的记忆。</div>
+  </div></div>
+</div>
+
+<div class="window" id="guestbook">
+  <div class="window-title">💌 GUESTBOOK <span>MESSAGE</span></div>
+  <div class="window-body">
+    <b>♡ 来过这里的话，留下一个小小的脚印吧。</b><br>
+    <small>留言会同步到云端，所有人都能看到哦。</small>
+    <div style="text-align:center;margin-top:10px;padding:8px;background:#fff6fa;border:1px dashed #d17697;color:#b83f6d;font-size:11px;">✦ 留言后下拉查看历史留言 ✦</div>
+    <div class="guestbook-wrapper">
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="dc32588c-9c48-45ed-a2a4-340648df64f6" data-page-id="mioki-guestbook" data-page-url="http://118.31.105.203/" data-page-title="Mioki's Guestbook" data-theme="light"></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </div>
+</div>
+
+<section class="window long-diary" id="longDiary">
+  <div class="window-title">📖 MY DIARY <span>DIARY</span></div>
+  <div class="window-body">
+    <article class="diary-paper"><div class="diary-meta">2026.08.27　♡　心情：★★★★★</div><h2>今天也要好好生活 ♡</h2><p>这里是 Mioki 的第一篇长篇日记。以后从后台发布的新日记，会按照日期自动排列，最新的一篇永远在最上面。</p><p>正文可以写得很长，不会被固定在一个小窗口里。每一篇日记都会保留自己的日期、可爱随意的标题、心情和完整内容。</p></article>
+    <article class="diary-paper"><div class="diary-meta">2026.08.25　♡　心情：★★★★☆</div><h2>最近在循环这首歌 ✦</h2><p>有时候就是会突然喜欢上一首歌，然后一整天都想听。以后也把这些小小的喜欢留在这里。</p></article>
+  </div>
+</section>
+</main>
+</div>
+<div class="footer">♡ made with love by Mioki ♡　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
+</div>
+
+<button class="admin-open" id="adminBtn">🖥️ 管理</button>
+<button class="egg-open" id="eggBtn" onclick="openGame()">🐟</button>
+
+<div class="gate" id="adminGate">
+  <div class="panel"><div class="panel-title">🔒 MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div>
+  <div class="panel-body">
+    <b>♡ 管理后台</b><p>请输入管理密码：</p>
+    <input id="adminPass" type="password" placeholder="password" autocomplete="off">
+    <button onclick="loginAdmin()">进入后台</button>
+    <button onclick="closeAdmin()">取消</button>
+    <p id="adminMsg" style="color:#b83f6d"></p>
+  </div></div>
+</div>
+
+<div class="egg" id="eggGate">
+  <div class="panel"><div class="panel-title">✦ SECRET MESSAGE ✦ <span class="close-btn" onclick="closeEgg()">×</span></div>
+  <div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。♡<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">♡ 好啦，我发现了</button></div></div>
+</div>
+
+<div class="egg" id="puzzleGate">
+  <div class="panel" style="width:450px;"><div class="panel-title">🧩 PUZZLE GAMES <span class="close-btn" onclick="closePuzzle()">×</span></div>
+  <div class="panel-body">
+    <b>♡ 我喜欢的网页解谜</b>
+    <div class="menu" style="margin-top:10px;">
+      <a href="https://yeshanbichu.pages.dev/" target="_blank">✦ 邺山彼处</a>
+      <a href="https://anninganya-glitch.github.io/new/" target="_blank">✦ 我的秘密花园</a>
+      <a href="https://qingmiaomiddleschool.github.io/404-ymail.com/" target="_blank">✦ 青苗中学英才培养计划</a>
+      <a href="https://www.hces.edu.tw.solve.quest/" target="_blank">✦ 溪埕國民小學失蹤事件</a>
+      <a href="https://www.bingzhuyetan.com/" target="_blank">✦ 寻找陈雨彤</a>
+      <a href="https://heiziheizi123.github.io/girlsinchat/start.html" target="_blank">✦ 聊天室的女孩们</a>
+    </div>
+  </div></div>
+</div>
+
+<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()">
+  <div class="panel" style="width:500px;"><div class="panel-title">📷 PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div>
+  <div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div>
+</div>
+
+<div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()">
+  <div class="panel" style="width:450px;"><div class="panel-title">🐟 摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div>
+  <div class="panel-body">
+    <b>♡ 摸鱼时间到~</b>
+    <div class="menu" style="margin-top:10px;">
+      <a href="https://poki.com/zh" target="_blank">🎮 游戏大全</a>
+      <a href="https://www.cookinggames.com/" target="_blank">🍳 做饭小游戏</a>
+      <a href="https://elternal.world/" target="_blank">🌍 Elternal World</a>
+      <a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank">📝 狗屁不通文章生成器</a>
+      <a href="https://liferestart.syaro.io/" target="_blank">🔄 人生重开模拟器</a>
+      <a href="https://www.skylinewebcams.com/" target="_blank">🛡️ 世界保安模拟器</a>
+      <a href="https://theuselessweb.com/" target="_blank">🎲 随机的无聊网站</a>
+      <a href="https://wigglypaint.com/" target="_blank">🖌️ 抖动涂鸦</a>
+    </div>
+  </div></div>
+</div>
+
+<script>
+function $(id){return document.getElementById(id)}
+var playlist=[{title:"Killer Neuron",artist:"藍月なくる",src:"http://118.31.105.203/music/KillerNeuron.mp3"},{title:"Test Song 2",artist:"SoundHelix",src:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"}];
+var currentTrack=0,isPlaying=false,audio=new Audio();
+function setVolume(v){audio.volume=v/100;$('volumePercent').textContent=v+'%'}
+function loadTrack(i){currentTrack=i;audio.src=playlist[i].src;audio.load();$('songTitle').textContent=playlist[i].title;$('songInfo').textContent=playlist[i].artist;$('statusSong').textContent=playlist[i].title;$('timeDisplay').textContent='00:00 / 00:00';$('progressFill').style.width='0%'}
+function togglePlay(){if(audio.paused){audio.play();isPlaying=true;$('btnPlay').textContent='⏸ 暂停';$('btnPlay').classList.add('active');$('discIcon').classList.add('playing')}else{audio.pause();isPlaying=false;$('btnPlay').textContent='▶ 播放';$('btnPlay').classList.remove('active');$('discIcon').classList.remove('playing')}}
+function stopMusic(){audio.pause();audio.currentTime=0;isPlaying=false;$('btnPlay').textContent='▶ 播放';$('btnPlay').classList.remove('active');$('discIcon').classList.remove('playing');$('progressFill').style.width='0%';$('timeDisplay').textContent='00:00 / 00:00'}
+function nextTrack(){currentTrack=(currentTrack+1)%playlist.length;var w=isPlaying;loadTrack(currentTrack);if(w)audio.play()}
+function prevTrack(){currentTrack=(currentTrack-1+playlist.length)%playlist.length;var w=isPlaying;loadTrack(currentTrack);if(w)audio.play()}
+function formatTime(s){if(isNaN(s)||!isFinite(s))return'00:00';return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
+audio.addEventListener('timeupdate',function(){if(audio.duration){$('progressFill').style.width=(audio.currentTime/audio.duration*100)+'%';$('timeDisplay').textContent=formatTime(audio.currentTime)+' / '+formatTime(audio.duration)}});
+$('progressBar').addEventListener('click',function(e){if(!audio.duration)return;var r=this.getBoundingClientRect();audio.currentTime=(e.clientX-r.left)/r.width*audio.duration});
+audio.addEventListener('ended',nextTrack);
+audio.addEventListener('error',function(){$('songInfo').textContent='⚠ 歌曲加载失败';isPlaying=false;$('btnPlay').textContent='▶ 播放';$('discIcon').classList.remove('playing')});
+function openEgg(){$('eggGate').style.display='flex'}function closeEgg(){$('eggGate').style.display='none'}
+function openPuzzle(){$('puzzleGate').style.display='flex'}function closePuzzle(){$('puzzleGate').style.display='none'}
+function showPhoto(s){$('photoView').src=s;$('photoGate').style.display='flex'}function closePhoto(){$('photoGate').style.display='none';$('photoView').src=''}
+function openGame(){$('gameGate').style.display='flex'}function closeGame(){$('gameGate').style.display='none'}
+function openAdmin(){$('adminGate').style.display='flex';$('adminPass').value='';$('adminMsg').textContent='';setTimeout(function(){$('adminPass').focus()},50)}
+function closeAdmin(){$('adminGate').style.display='none'}
+function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='♡ 验证成功，正在跳转…';setTimeout(function(){closeAdmin();window.open('https://118.31.105.203:39692/files','_blank')},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
+function updateClock(){var n=new Date();$('currentTime').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0')}
+function updateSiteDays(){var s=new Date('2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
+function updateVisitorCounter(){var c=parseInt(localStorage.getItem('mioki_visitor_count')||'127');c++;localStorage.setItem('mioki_visitor_count',c);var d=String(c).padStart(6,'0');$('visitorCounter').textContent=d;$('footerCounter').textContent=d}
+document.addEventListener('DOMContentLoaded',function(){
+  $('adminBtn').addEventListener('click',openAdmin);
+  $('btnPlay').addEventListener('click',togglePlay);
+  $('btnStop').addEventListener('click',stopMusic);
+  $('btnNext').addEventListener('click',nextTrack);
+  $('btnPrev').addEventListener('click',prevTrack);
+  $('volumeSlider').addEventListener('input',function(){setVolume(this.value)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAdmin();closeEgg();closePuzzle();closePhoto();closeGame()}if(e.key===' '&&e.target===document.body){e.preventDefault();togglePlay()}});
+  $('adminPass').addEventListener('keydown',function(e){if(e.key==='Enter')loginAdmin()});
+  updateVisitorCounter();updateSiteDays();updateClock();setInterval(updateClock,1000);setVolume(70);loadTrack(0);
+});
+$('eggGate').addEventListener('click',function(e){if(e.target===this)closeEgg()});
+$('puzzleGate').addEventListener('click',function(e){if(e.target===this)closePuzzle()});
+$('adminGate').addEventListener('click',function(e){if(e.target===this)closeAdmin()});
+window.addEventListener('load',function(){setTimeout(function(){var n=document.querySelector('.guestbook-wrapper input[type="text"]');var m=document.querySelector('.guestbook-wrapper textarea');if(n)n.placeholder='你的名字 ♡';if(m)m.placeholder='写下想说的话… ✦';var b=document.querySelector('.guestbook-wrapper button[type="submit"]');if(b)b.textContent='♡ 留下脚印'},1500)});
+</script>
+</body>
+</html>
