@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1100">
-<title>♡ MIOKI ADMIN ♡</title>
+<title>MIOKI ADMIN</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-width:900px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px}
@@ -36,7 +36,7 @@ button:hover{background:#f2b1c7}
 </head>
 <body>
 <div class="shell">
-<h1>♡ MIOKI ADMIN ♡</h1>
+<h1>MIOKI ADMIN</h1>
 <div class="subtitle">── ✦ PRIVATE CONTROL PANEL ✦ ──</div>
 
 <h2>个人资料</h2>
@@ -47,16 +47,16 @@ button:hover{background:#f2b1c7}
   <textarea id="editBio" placeholder="喜欢粉色、音乐、一些漂亮的小东西。"></textarea>
   <label>心情 Mood</label>
   <select id="editMood">
-    <option value="dreamy">♡ dreamy 梦幻</option>
-    <option value="happy">♡ happy 开心</option>
-    <option value="tired">♡ tired 累了</option>
-    <option value="sleepy">♡ sleepy 困困</option>
-    <option value="excited">♡ excited 兴奋</option>
-    <option value="calm">♡ calm 平静</option>
-    <option value="sad">♡ sad 难过</option>
-    <option value="lazy">♡ lazy 懒懒</option>
+    <option value="dreamy">dreamy 梦幻</option>
+    <option value="happy">happy 开心</option>
+    <option value="tired">tired 累了</option>
+    <option value="sleepy">sleepy 困困</option>
+    <option value="excited">excited 兴奋</option>
+    <option value="calm">calm 平静</option>
+    <option value="sad">sad 难过</option>
+    <option value="lazy">lazy 懒懒</option>
   </select>
-  <button onclick="saveProfile()">保存资料 ♡</button>
+  <button onclick="saveProfile()">保存资料</button>
   <span class="success" id="profileMsg"></span>
 </div>
 
@@ -67,17 +67,17 @@ button:hover{background:#f2b1c7}
     <option value="● online">● 在线</option>
     <option value="● offline">● 离线</option>
   </select>
-  <button onclick="saveStatus()">保存状态 ♡</button>
+  <button onclick="saveStatus()">保存状态</button>
   <span class="success" id="statusMsg"></span>
 </div>
 
 <h2>欢迎语</h2>
 <div class="section">
   <label>欢迎标题</label>
-  <input id="editWelcomeTitle" placeholder="你好，欢迎来到这里 ♡">
+  <input id="editWelcomeTitle" placeholder="你好，欢迎来到这里">
   <label>欢迎内容</label>
   <textarea id="editWelcomeText" placeholder="这里不是一个普通的网站…"></textarea>
-  <button onclick="saveWelcome()">保存欢迎语 ♡</button>
+  <button onclick="saveWelcome()">保存欢迎语</button>
   <span class="success" id="welcomeMsg"></span>
 </div>
 
@@ -89,7 +89,7 @@ button:hover{background:#f2b1c7}
   <input id="editSongArtist" placeholder="歌手">
   <label>歌曲链接</label>
   <input id="editSongSrc" placeholder="https://...mp3">
-  <button onclick="addSong()">添加歌曲 ♡</button>
+  <button onclick="addSong()">添加歌曲</button>
   <button onclick="clearSongs()" style="background:#fff;color:#c74d78;">清空歌单</button>
   <span class="success" id="songMsg"></span>
   <div id="songList" style="margin-top:10px;"></div>
@@ -99,8 +99,21 @@ button:hover{background:#f2b1c7}
 <div class="section">
   <label>新碎碎念</label>
   <input id="editThought" placeholder="写下今天想说的…">
-  <button onclick="addThought()">发布碎碎念 ♡</button>
+  <button onclick="addThought()">发布碎碎念</button>
   <span class="success" id="thoughtMsg"></span>
+  <div id="thoughtList" style="margin-top:15px;"></div>
+</div>
+
+<h2>时间线管理</h2>
+<div class="section">
+  <label>日期</label>
+  <input id="timelineDate" type="date">
+  <label>内容</label>
+  <input id="timelineText" placeholder="比如：网站正式建立">
+  <button onclick="addTimeline()">添加时间线</button>
+  <button onclick="clearTimeline()" style="background:#fff;color:#c74d78;">清空时间线</button>
+  <span class="success" id="timelineMsg"></span>
+  <div id="timelineList" style="margin-top:15px;"></div>
 </div>
 
 <h2>写日记</h2>
@@ -108,7 +121,7 @@ button:hover{background:#f2b1c7}
   <label>日期</label>
   <input id="diaryDate" type="date">
   <label>标题</label>
-  <input id="diaryTitle" placeholder="日记标题 ♡">
+  <input id="diaryTitle" placeholder="日记标题">
   <label>心情</label>
   <select id="diaryMood">
     <option value="★★★★★">★★★★★ 超开心</option>
@@ -119,8 +132,9 @@ button:hover{background:#f2b1c7}
   </select>
   <label>内容</label>
   <textarea id="diaryContent" rows="6" placeholder="写点什么…"></textarea>
-  <button onclick="saveDiary()">发布日记 ♡</button>
+  <button onclick="saveDiary()">发布日记</button>
   <span class="success" id="diaryMsg"></span>
+  <div id="diaryAdminList" style="margin-top:15px;"></div>
 </div>
 
 <h2>相册管理</h2>
@@ -129,16 +143,16 @@ button:hover{background:#f2b1c7}
   <input id="editPhoto" placeholder="https://...jpg">
   <label>图片说明</label>
   <input id="editPhotoLabel" placeholder="照片一">
-  <button onclick="addPhoto()">添加照片 ♡</button>
+  <button onclick="addPhoto()">添加照片</button>
   <button onclick="clearPhotos()" style="background:#fff;color:#c74d78;">清空相册</button>
   <span class="success" id="photoMsg"></span>
-  <div class="tip">提示：先上传图片到 GitHub 仓库的 images 文件夹<br>链接格式：https://mioki.github.io/images/文件名.jpg</div>
+  <div class="tip">提示：先上传图片到 GitHub 仓库的 images 文件夹<br>链接格式：https://2050374994-sys.github.io/mioki.github.io/images/文件名.jpg</div>
 </div>
 
 <div class="back">
   <a href="index.html">← 返回网站</a>
 </div>
-<div class="footer-note">♡ MADE WITH LOVE BY MIOKI ♡</div>
+<div class="footer-note">MADE WITH LOVE BY MIOKI</div>
 </div>
 
 <script>
@@ -152,7 +166,6 @@ function loadData(key){
   return data ? JSON.parse(data) : null;
 }
 
-// 个人资料
 function saveProfile(){
   saveData('profile', {
     name: $('editName').value || 'Mioki',
@@ -162,13 +175,11 @@ function saveProfile(){
   $('profileMsg').textContent = '✓ 已保存';
 }
 
-// 状态
 function saveStatus(){
   saveData('status', $('editStatus').value);
   $('statusMsg').textContent = '✓ 已保存';
 }
 
-// 欢迎语
 function saveWelcome(){
   saveData('welcome', {
     title: $('editWelcomeTitle').value,
@@ -177,7 +188,6 @@ function saveWelcome(){
   $('welcomeMsg').textContent = '✓ 已保存';
 }
 
-// 歌曲
 function addSong(){
   var songs = loadData('songs') || [];
   songs.push({
@@ -204,18 +214,61 @@ function renderSongs(){
   $('songList').innerHTML = html || '<span style="color:#a88;">暂无歌曲</span>';
 }
 
-// 碎碎念
 function addThought(){
   var thoughts = loadData('thoughts') || [];
   var now = new Date();
-  var date = String(now.getMonth()+1).padStart(2,'0') + '.' + String(now.getDate()).padStart(2,'0');
+  var date = String(now.getMonth()+1).padStart(2,'0') + '.' + String(now.getDate()).padStart(2,'0') + ' ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
   thoughts.unshift({date: date, text: $('editThought').value});
   saveData('thoughts', thoughts);
   $('thoughtMsg').textContent = '✓ 已发布';
   $('editThought').value='';
+  renderThoughtAdmin();
+}
+function renderThoughtAdmin(){
+  var thoughts = loadData('thoughts') || [];
+  var html = '';
+  thoughts.forEach(function(t, i){
+    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteThought(' + i + ')">✕</span></div>';
+  });
+  $('thoughtList').innerHTML = html || '<span style="color:#a88;">暂无碎碎念</span>';
+}
+function deleteThought(index){
+  var thoughts = loadData('thoughts') || [];
+  thoughts.splice(index, 1);
+  saveData('thoughts', thoughts);
+  renderThoughtAdmin();
 }
 
-// 日记
+function addTimeline(){
+  var timelines = loadData('timelines') || [];
+  var date = $('timelineDate').value || new Date().toISOString().slice(0,10);
+  var displayDate = date.replace(/-/g, '.');
+  timelines.unshift({date: displayDate, text: $('timelineText').value || '...'});
+  saveData('timelines', timelines);
+  $('timelineMsg').textContent = '✓ 已添加';
+  $('timelineDate').value='';$('timelineText').value='';
+  renderTimelineAdmin();
+}
+function renderTimelineAdmin(){
+  var timelines = loadData('timelines') || [];
+  var html = '';
+  timelines.forEach(function(t, i){
+    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteTimeline(' + i + ')">✕</span></div>';
+  });
+  $('timelineList').innerHTML = html || '<span style="color:#a88;">暂无时间线</span>';
+}
+function deleteTimeline(index){
+  var timelines = loadData('timelines') || [];
+  timelines.splice(index, 1);
+  saveData('timelines', timelines);
+  renderTimelineAdmin();
+}
+function clearTimeline(){
+  saveData('timelines', []);
+  renderTimelineAdmin();
+  $('timelineMsg').textContent = '✓ 已清空';
+}
+
 function saveDiary(){
   var diaries = loadData('diaries') || [];
   var date = $('diaryDate').value || new Date().toISOString().slice(0,10);
@@ -229,9 +282,23 @@ function saveDiary(){
   saveData('diaries', diaries);
   $('diaryMsg').textContent = '✓ 日记已发布';
   $('diaryDate').value='';$('diaryTitle').value='';$('diaryContent').value='';
+  renderDiaryAdmin();
+}
+function renderDiaryAdmin(){
+  var diaries = loadData('diaries') || [];
+  var html = '';
+  diaries.forEach(function(d, i){
+    html += '<div class="song-item"><b>' + d.date + '</b> ' + d.title + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteDiary(' + i + ')">✕</span></div>';
+  });
+  $('diaryAdminList').innerHTML = html || '<span style="color:#a88;">暂无日记</span>';
+}
+function deleteDiary(index){
+  var diaries = loadData('diaries') || [];
+  diaries.splice(index, 1);
+  saveData('diaries', diaries);
+  renderDiaryAdmin();
 }
 
-// 照片
 function addPhoto(){
   var photos = loadData('photos') || [];
   photos.push({src: $('editPhoto').value, label: $('editPhotoLabel').value || '照片'});
@@ -244,7 +311,6 @@ function clearPhotos(){
   $('photoMsg').textContent = '✓ 已清空';
 }
 
-// 加载已有数据
 function loadAll(){
   var profile = loadData('profile');
   if(profile){
@@ -260,6 +326,9 @@ function loadAll(){
     $('editWelcomeText').value = welcome.text;
   }
   renderSongs();
+  renderThoughtAdmin();
+  renderTimelineAdmin();
+  renderDiaryAdmin();
 }
 
 loadAll();
