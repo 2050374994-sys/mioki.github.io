@@ -60,19 +60,15 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .guestbook-wrapper button{background:#f9dbe6 !important;color:#673047 !important;border:2px solid #8c4562 !important;font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;padding:8px 16px !important;cursor:pointer !important}
 .guestbook-wrapper .cusdis-comment-content{font-family:"Comic Sans MS","华文细黑","Microsoft YaHei",cursive !important;font-size:14px !important;line-height:1.9 !important;color:#5a2d40 !important}
 .guestbook-wrapper .cusdis-comment-author{font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;color:#c74d78 !important}
-.long-diary{margin-top:10px}
-.long-diary .window-body{padding:14px 16px}
-.diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}
-.diary-paper:last-child{margin-bottom:0}
-.diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}
-.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
+.long-diary{margin-top:10px}.long-diary .window-body{padding:14px 16px}
+.diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}.diary-paper:last-child{margin-bottom:0}
+.diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
 .admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fff4f7;color:#8c4562;border:2px solid #8c4562;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
 .egg-open{position:fixed;left:18px;bottom:18px;z-index:999;color:#8c4562;background:#fff4f7;border:1px dotted #b85a7d;padding:6px 10px;cursor:pointer;opacity:.7;font-family:"Courier New","Microsoft YaHei",monospace;font-size:18px}
 .gate,.egg{position:fixed;inset:0;background:rgba(54,27,40,.72);display:none;align-items:center;justify-content:center;z-index:1000}
 .panel{width:400px;background:#fff8ee;border:3px double #673047;box-shadow:10px 10px 0 rgba(20,10,15,.3)}
 .panel-title{background:#c74d78;color:#fff;padding:7px 9px;font-weight:bold}
-.panel-body{padding:18px}
-.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #b85a7d;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
+.panel-body{padding:18px}.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #b85a7d;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
 .panel-body button{padding:7px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
 .egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
 .close-btn{float:right;cursor:pointer;font-weight:bold}
@@ -86,13 +82,8 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <div class="desktop">
 <aside>
 <div class="window"><div class="window-title">♡ PROFILE <span>_ □</span></div><div class="window-body">
-<div class="avatar">M<br>I<br>O<br>K<br>I<br>♡</div><b>Mioki</b><br><span style="color:#5c8b68">● online</span><br><br><span style="color:#b83f6d;">♡ mood: dreamy</span><br><br>喜欢粉色、音乐、<br>一些漂亮的小东西。
-<br><br>
-<div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;">
-  <span style="font-size:11px;color:#a88;">♡ 本站已运行</span><br>
-  <span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span>
-  <span style="font-size:11px;color:#a88;">天</span>
-</div>
+<div class="avatar">M<br>I<br>O<br>K<br>I<br>♡</div><b>Mioki</b><br><span style="color:#5c8b68" id="profileStatus">● online</span><br><br><span style="color:#b83f6d;" id="profileMood">♡ mood: dreamy</span><br><br><span id="profileBio">喜欢粉色、音乐、一些漂亮的小东西。</span>
+<br><br><div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;"><span style="font-size:11px;color:#a88;">♡ 本站已运行</span><br><span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span><span style="font-size:11px;color:#a88;">天</span></div>
 </div></div>
 
 <div class="window"><div class="window-title">MENU <span>✦</span></div><div class="window-body menu">
@@ -120,8 +111,8 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 </aside>
 <main class="main" id="home">
 <div class="welcome-grid">
-<div class="window"><div class="window-title">♡ WELCOME <span>HOME</span></div><div class="window-body note"><h2>你好，欢迎来到这里 ♡</h2>这里不是一个普通的网站。<br>它更像是一间放在互联网上的小房间。<br><br>可以写日记、放照片、收藏喜欢的歌，<br>也可以什么都不做，只是偶尔回来看看。</div></div>
-<div class="window"><div class="window-title">NOW</div><div class="window-body state"><b>♡ TODAY'S MOOD</b><br>soft & dreamy<br><br><b>♡ STATUS</b><br>making my little web<br><br><b>♡ LOCATION</b><br>somewhere in pink clouds</div></div>
+<div class="window"><div class="window-title">♡ WELCOME <span>HOME</span></div><div class="window-body note"><h2 id="welcomeTitle">你好，欢迎来到这里 ♡</h2><p id="welcomeText">这里不是一个普通的网站。它更像是一间放在互联网上的小房间。可以写日记、放照片、收藏喜欢的歌，也可以什么都不做，只是偶尔回来看看。</p></div></div>
+<div class="window"><div class="window-title">NOW</div><div class="window-body state"><b>♡ TODAY'S MOOD</b><br><span id="nowMood">soft & dreamy</span><br><br><b>♡ STATUS</b><br><span id="nowStatus">making my little web</span><br><br><b>♡ LOCATION</b><br>somewhere in pink clouds</div></div>
 </div>
 <div class="window"><div class="window-title">QUICK ACCESS</div><div class="window-body cards">
 <a class="card" href="#longDiary"><span class="ico">📖</span>我的日记</a>
@@ -130,69 +121,48 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <a class="card" href="#guestbook"><span class="ico">💌</span>访客留言</a>
 </div></div>
 
-<div class="window" id="thoughts">
-  <div class="window-title">💭 LITTLE THOUGHTS <span>THOUGHTS</span></div>
-  <div class="window-body content-list">
-    <div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料 ♡</div>
-    <div class="entry"><b>08.25</b>　最近一直在循环一首很喜欢的歌。</div>
-    <div class="entry"><b>08.21</b>　一些乱七八糟的小想法 ✦</div>
-  </div>
-</div>
+<div class="window" id="thoughts"><div class="window-title">💭 LITTLE THOUGHTS <span>THOUGHTS</span></div><div class="window-body content-list" id="thoughtsList">
+<div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料 ♡</div>
+<div class="entry"><b>08.25</b>　最近一直在循环一首很喜欢的歌。</div>
+<div class="entry"><b>08.21</b>　一些乱七八糟的小想法 ✦</div>
+</div></div>
 
-<div class="window" id="album">
-  <div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div>
-  <div class="window-body photo-grid">
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=1')"><img src="https://picsum.photos/400/300?random=1" loading="lazy"><span class="photo-label">♡ 照片一</span></div>
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=2')"><img src="https://picsum.photos/400/300?random=2" loading="lazy"><span class="photo-label">✦ 照片二</span></div>
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=3')"><img src="https://picsum.photos/400/300?random=3" loading="lazy"><span class="photo-label">♡ 照片三</span></div>
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=4')"><img src="https://picsum.photos/400/300?random=4" loading="lazy"><span class="photo-label">✦ 照片四</span></div>
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=5')"><img src="https://picsum.photos/400/300?random=5" loading="lazy"><span class="photo-label">♡ 照片五</span></div>
-    <div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=6')"><img src="https://picsum.photos/400/300?random=6" loading="lazy"><span class="photo-label">✦ 照片六</span></div>
-  </div>
-</div>
+<div class="window" id="album"><div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div><div class="window-body photo-grid" id="photoGrid">
+<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=1')"><img src="https://picsum.photos/400/300?random=1" loading="lazy"><span class="photo-label">♡ 照片一</span></div>
+<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=2')"><img src="https://picsum.photos/400/300?random=2" loading="lazy"><span class="photo-label">✦ 照片二</span></div>
+<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=3')"><img src="https://picsum.photos/400/300?random=3" loading="lazy"><span class="photo-label">♡ 照片三</span></div>
+</div></div>
 
 <div class="two">
-  <div class="window" id="music">
-    <div class="window-title">♫ NOW PLAYING <span>MUSIC</span></div>
-    <div class="window-body">
-      <div class="music"><div class="disc" id="discIcon">♫</div><div><div class="song-title" id="songTitle">未选择歌曲</div><div class="song-info" id="songInfo">点击播放按钮开始 ♫</div></div></div>
-      <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="music-controls">
-        <button class="music-btn" id="btnPrev">◀◀</button>
-        <button class="music-btn" id="btnPlay">▶ 播放</button>
-        <button class="music-btn" id="btnStop">■ 停止</button>
-        <button class="music-btn" id="btnNext">▶▶</button>
-      </div>
-      <div class="volume-control"><span>🔊</span><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70"><span class="volume-percent" id="volumePercent">70%</span></div>
-      <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
-    </div>
-  </div>
-  <div class="window" id="timeline"><div class="window-title">🕰 TIMELINE</div><div class="window-body timeline">
-    <div class="entry"><b>2026.08</b><br>开始慢慢制作这个小网站。</div>
-    <div class="entry"><b>2026.07</b><br>留下一个夏天的记忆。</div>
-  </div></div>
+<div class="window" id="music"><div class="window-title">♫ NOW PLAYING <span>MUSIC</span></div><div class="window-body">
+<div class="music"><div class="disc" id="discIcon">♫</div><div><div class="song-title" id="songTitle">未选择歌曲</div><div class="song-info" id="songInfo">点击播放按钮开始 ♫</div></div></div>
+<div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="music-controls">
+<button class="music-btn" id="btnPrev">◀◀</button>
+<button class="music-btn" id="btnPlay">▶ 播放</button>
+<button class="music-btn" id="btnStop">■ 停止</button>
+<button class="music-btn" id="btnNext">▶▶</button>
+</div>
+<div class="volume-control"><span>🔊</span><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70"><span class="volume-percent" id="volumePercent">70%</span></div>
+<div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+</div></div>
+<div class="window" id="timeline"><div class="window-title">🕰 TIMELINE</div><div class="window-body timeline">
+<div class="entry"><b>2026.08</b><br>开始慢慢制作这个小网站。</div>
+<div class="entry"><b>2026.07</b><br>留下一个夏天的记忆。</div>
+</div></div>
 </div>
 
-<div class="window" id="guestbook">
-  <div class="window-title">💌 GUESTBOOK <span>MESSAGE</span></div>
-  <div class="window-body">
-    <b>♡ 来过这里的话，留下一个小小的脚印吧。</b><br>
-    <small>留言会同步到云端，所有人都能看到哦。</small>
-    <div style="text-align:center;margin-top:10px;padding:8px;background:#fff6fa;border:1px dashed #d17697;color:#b83f6d;font-size:11px;">✦ 留言后下拉查看历史留言 ✦</div>
-    <div class="guestbook-wrapper">
-      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="dc32588c-9c48-45ed-a2a4-340648df64f6" data-page-id="mioki-guestbook" data-page-url="http://118.31.105.203/" data-page-title="Mioki's Guestbook" data-theme="light"></div>
-      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-    </div>
-  </div>
-</div>
+<div class="window" id="guestbook"><div class="window-title">💌 GUESTBOOK <span>MESSAGE</span></div><div class="window-body">
+<b>♡ 来过这里的话，留下一个小小的脚印吧。</b><br>
+<small>留言会同步到云端，所有人都能看到哦。</small>
+<div style="text-align:center;margin-top:10px;padding:8px;background:#fff6fa;border:1px dashed #d17697;color:#b83f6d;font-size:11px;">✦ 留言后下拉查看历史留言 ✦</div>
+<div class="guestbook-wrapper"><div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="dc32588c-9c48-45ed-a2a4-340648df64f6" data-page-id="mioki-guestbook" data-page-url="http://118.31.105.203/" data-page-title="Mioki's Guestbook" data-theme="light"></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script></div>
+</div></div>
 
-<section class="window long-diary" id="longDiary">
-  <div class="window-title">📖 MY DIARY <span>DIARY</span></div>
-  <div class="window-body">
-    <article class="diary-paper"><div class="diary-meta">2026.08.27　♡　心情：★★★★★</div><h2>今天也要好好生活 ♡</h2><p>这里是 Mioki 的第一篇长篇日记。以后从后台发布的新日记，会按照日期自动排列，最新的一篇永远在最上面。</p><p>正文可以写得很长，不会被固定在一个小窗口里。每一篇日记都会保留自己的日期、可爱随意的标题、心情和完整内容。</p></article>
-    <article class="diary-paper"><div class="diary-meta">2026.08.25　♡　心情：★★★★☆</div><h2>最近在循环这首歌 ✦</h2><p>有时候就是会突然喜欢上一首歌，然后一整天都想听。以后也把这些小小的喜欢留在这里。</p></article>
-  </div>
-</section>
+<section class="window long-diary" id="longDiary"><div class="window-title">📖 MY DIARY <span>DIARY</span></div><div class="window-body">
+<article class="diary-paper"><div class="diary-meta">2026.08.27　♡　心情：★★★★★</div><h2>今天也要好好生活 ♡</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>
+</div></section>
 </main>
 </div>
 <div class="footer">♡ made with love by Mioki ♡　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
@@ -201,62 +171,63 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <button class="admin-open" id="adminBtn">🖥️ 管理</button>
 <button class="egg-open" id="eggBtn" onclick="openGame()">🐟</button>
 
-<div class="gate" id="adminGate">
-  <div class="panel"><div class="panel-title">🔒 MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div>
-  <div class="panel-body">
-    <b>♡ 管理后台</b><p>请输入管理密码：</p>
-    <input id="adminPass" type="password" placeholder="password" autocomplete="off">
-    <button onclick="loginAdmin()">进入后台</button>
-    <button onclick="closeAdmin()">取消</button>
-    <p id="adminMsg" style="color:#b83f6d"></p>
-  </div></div>
-</div>
+<div class="gate" id="adminGate"><div class="panel"><div class="panel-title">🔒 MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div><div class="panel-body">
+<b>♡ 管理后台</b><p>请输入管理密码：</p>
+<input id="adminPass" type="password" placeholder="password" autocomplete="off">
+<button onclick="loginAdmin()">进入后台</button>
+<button onclick="closeAdmin()">取消</button>
+<p id="adminMsg" style="color:#b83f6d"></p>
+</div></div></div>
 
-<div class="egg" id="eggGate">
-  <div class="panel"><div class="panel-title">✦ SECRET MESSAGE ✦ <span class="close-btn" onclick="closeEgg()">×</span></div>
-  <div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。♡<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">♡ 好啦，我发现了</button></div></div>
-</div>
+<div class="egg" id="eggGate"><div class="panel"><div class="panel-title">✦ SECRET MESSAGE ✦ <span class="close-btn" onclick="closeEgg()">×</span></div><div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。♡<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">♡ 好啦，我发现了</button></div></div></div>
 
-<div class="egg" id="puzzleGate">
-  <div class="panel" style="width:450px;"><div class="panel-title">🧩 PUZZLE GAMES <span class="close-btn" onclick="closePuzzle()">×</span></div>
-  <div class="panel-body">
-    <b>♡ 我喜欢的网页解谜</b>
-    <div class="menu" style="margin-top:10px;">
-      <a href="https://yeshanbichu.pages.dev/" target="_blank">✦ 邺山彼处</a>
-      <a href="https://anninganya-glitch.github.io/new/" target="_blank">✦ 我的秘密花园</a>
-      <a href="https://qingmiaomiddleschool.github.io/404-ymail.com/" target="_blank">✦ 青苗中学英才培养计划</a>
-      <a href="https://www.hces.edu.tw.solve.quest/" target="_blank">✦ 溪埕國民小學失蹤事件</a>
-      <a href="https://www.bingzhuyetan.com/" target="_blank">✦ 寻找陈雨彤</a>
-      <a href="https://heiziheizi123.github.io/girlsinchat/start.html" target="_blank">✦ 聊天室的女孩们</a>
-    </div>
-  </div></div>
-</div>
+<div class="egg" id="puzzleGate"><div class="panel" style="width:450px;"><div class="panel-title">🧩 PUZZLE GAMES <span class="close-btn" onclick="closePuzzle()">×</span></div><div class="panel-body">
+<b>♡ 我喜欢的网页解谜</b><div class="menu" style="margin-top:10px;">
+<a href="https://yeshanbichu.pages.dev/" target="_blank">✦ 邺山彼处</a>
+<a href="https://anninganya-glitch.github.io/new/" target="_blank">✦ 我的秘密花园</a>
+<a href="https://qingmiaomiddleschool.github.io/404-ymail.com/" target="_blank">✦ 青苗中学英才培养计划</a>
+<a href="https://www.hces.edu.tw.solve.quest/" target="_blank">✦ 溪埕國民小學失蹤事件</a>
+<a href="https://www.bingzhuyetan.com/" target="_blank">✦ 寻找陈雨彤</a>
+<a href="https://heiziheizi123.github.io/girlsinchat/start.html" target="_blank">✦ 聊天室的女孩们</a>
+</div></div></div></div>
 
-<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()">
-  <div class="panel" style="width:500px;"><div class="panel-title">📷 PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div>
-  <div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div>
-</div>
+<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()"><div class="panel" style="width:500px;"><div class="panel-title">📷 PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div><div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div></div>
 
-<div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()">
-  <div class="panel" style="width:450px;"><div class="panel-title">🐟 摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div>
-  <div class="panel-body">
-    <b>♡ 摸鱼时间到~</b>
-    <div class="menu" style="margin-top:10px;">
-      <a href="https://poki.com/zh" target="_blank">🎮 游戏大全</a>
-      <a href="https://www.cookinggames.com/" target="_blank">🍳 做饭小游戏</a>
-      <a href="https://elternal.world/" target="_blank">🌍 Elternal World</a>
-      <a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank">📝 狗屁不通文章生成器</a>
-      <a href="https://liferestart.syaro.io/" target="_blank">🔄 人生重开模拟器</a>
-      <a href="https://www.skylinewebcams.com/" target="_blank">🛡️ 世界保安模拟器</a>
-      <a href="https://theuselessweb.com/" target="_blank">🎲 随机的无聊网站</a>
-      <a href="https://wigglypaint.com/" target="_blank">🖌️ 抖动涂鸦</a>
-    </div>
-  </div></div>
-</div>
+<div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()"><div class="panel" style="width:450px;"><div class="panel-title">🐟 摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div><div class="panel-body">
+<b>♡ 摸鱼时间到~</b><div class="menu" style="margin-top:10px;">
+<a href="https://poki.com/zh" target="_blank">🎮 游戏大全</a>
+<a href="https://www.cookinggames.com/" target="_blank">🍳 做饭小游戏</a>
+<a href="https://elternal.world/" target="_blank">🌍 Elternal World</a>
+<a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank">📝 狗屁不通文章生成器</a>
+<a href="https://liferestart.syaro.io/" target="_blank">🔄 人生重开模拟器</a>
+<a href="https://www.skylinewebcams.com/" target="_blank">🛡️ 世界保安模拟器</a>
+<a href="https://theuselessweb.com/" target="_blank">🎲 随机的无聊网站</a>
+<a href="https://wigglypaint.com/" target="_blank">🖌️ 抖动涂鸦</a>
+</div></div></div></div>
 
 <script>
 function $(id){return document.getElementById(id)}
-var playlist=[{title:"Killer Neuron",artist:"藍月なくる",src:"http://118.31.105.203/music/KillerNeuron.mp3"},{title:"Test Song 2",artist:"SoundHelix",src:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"}];
+
+// 加载 localStorage 数据
+function loadSavedData(){
+  var profile = JSON.parse(localStorage.getItem('mioki_profile'));
+  if(profile){
+    if(profile.name) document.querySelector('.avatar b') && (document.querySelector('.avatar').innerHTML = profile.name.split('').join('<br>'));
+    if(profile.bio) $('profileBio').textContent = profile.bio;
+    if(profile.mood) $('profileMood').textContent = '♡ mood: ' + profile.mood;
+  }
+  var status = JSON.parse(localStorage.getItem('mioki_status'));
+  if(status){
+    $('profileStatus').textContent = status;
+  }
+  var welcome = JSON.parse(localStorage.getItem('mioki_welcome'));
+  if(welcome){
+    if(welcome.title) $('welcomeTitle').textContent = welcome.title;
+    if(welcome.text) $('welcomeText').textContent = welcome.text;
+  }
+}
+
+var playlist = JSON.parse(localStorage.getItem('mioki_songs')) || [{title:"Killer Neuron",artist:"藍月なくる",src:"http://118.31.105.203/music/KillerNeuron.mp3"}];
 var currentTrack=0,isPlaying=false,audio=new Audio();
 function setVolume(v){audio.volume=v/100;$('volumePercent').textContent=v+'%'}
 function loadTrack(i){currentTrack=i;audio.src=playlist[i].src;audio.load();$('songTitle').textContent=playlist[i].title;$('songInfo').textContent=playlist[i].artist;$('statusSong').textContent=playlist[i].title;$('timeDisplay').textContent='00:00 / 00:00';$('progressFill').style.width='0%'}
@@ -268,18 +239,18 @@ function formatTime(s){if(isNaN(s)||!isFinite(s))return'00:00';return String(Mat
 audio.addEventListener('timeupdate',function(){if(audio.duration){$('progressFill').style.width=(audio.currentTime/audio.duration*100)+'%';$('timeDisplay').textContent=formatTime(audio.currentTime)+' / '+formatTime(audio.duration)}});
 $('progressBar').addEventListener('click',function(e){if(!audio.duration)return;var r=this.getBoundingClientRect();audio.currentTime=(e.clientX-r.left)/r.width*audio.duration});
 audio.addEventListener('ended',nextTrack);
-audio.addEventListener('error',function(){$('songInfo').textContent='⚠ 歌曲加载失败';isPlaying=false;$('btnPlay').textContent='▶ 播放';$('discIcon').classList.remove('playing')});
 function openEgg(){$('eggGate').style.display='flex'}function closeEgg(){$('eggGate').style.display='none'}
 function openPuzzle(){$('puzzleGate').style.display='flex'}function closePuzzle(){$('puzzleGate').style.display='none'}
 function showPhoto(s){$('photoView').src=s;$('photoGate').style.display='flex'}function closePhoto(){$('photoGate').style.display='none';$('photoView').src=''}
 function openGame(){$('gameGate').style.display='flex'}function closeGame(){$('gameGate').style.display='none'}
 function openAdmin(){$('adminGate').style.display='flex';$('adminPass').value='';$('adminMsg').textContent='';setTimeout(function(){$('adminPass').focus()},50)}
 function closeAdmin(){$('adminGate').style.display='none'}
-function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='♡ 验证成功，正在跳转…';setTimeout(function(){closeAdmin();window.open('https://118.31.105.203:39692/files','_blank')},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
+function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='♡ 验证成功，正在跳转…';setTimeout(function(){window.location.href='admin.html'},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
 function updateClock(){var n=new Date();$('currentTime').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0')}
-function updateSiteDays(){var s=new Date('2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
+function updateSiteDays(){var s=new Date(localStorage.getItem('mioki_startDate')||'2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
 function updateVisitorCounter(){var c=parseInt(localStorage.getItem('mioki_visitor_count')||'127');c++;localStorage.setItem('mioki_visitor_count',c);var d=String(c).padStart(6,'0');$('visitorCounter').textContent=d;$('footerCounter').textContent=d}
 document.addEventListener('DOMContentLoaded',function(){
+  loadSavedData();
   $('adminBtn').addEventListener('click',openAdmin);
   $('btnPlay').addEventListener('click',togglePlay);
   $('btnStop').addEventListener('click',stopMusic);
