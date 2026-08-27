@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1100">
-<title>♡ MIOKI // PRIVATE WEB DESKTOP ♡</title>
+<title>MIOKI // PRIVATE WEB DESKTOP</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><polygon points="2,2 20,10 12,12 10,20" fill="%23c74d78" stroke="%23fff" stroke-width="1.5"/></svg>') 2 2, auto}
@@ -67,66 +67,67 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .panel-body button{padding:7px 12px;border:1px solid #8c4562;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
 .egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
 .close-btn{float:right;cursor:pointer;font-weight:bold}
+/* 开屏 */
+#splash{position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
+.fall{position:fixed;top:-30px;animation:fall linear infinite;pointer-events:none;opacity:.85;z-index:1}
+@keyframes fall{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
 </style>
 </head>
 <body>
 
 <!-- 开屏 -->
-<div id="splash" style="position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999;">
-  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);display:flex;flex-direction:column;">
+<div id="splash">
+  <div id="fallContainer"></div>
+  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);display:flex;flex-direction:column;position:relative;z-index:2;">
     <div style="background:#c74d78;color:#fff;padding:10px;font-weight:bold;border-bottom:2px solid #673047;">
-      ♡ MIOKI // PRIVATE DESKTOP
+      MIOKI // PRIVATE DESKTOP
       <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;cursor:pointer;">×</a></span>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;">
-      <div style="font:60px Georgia,serif;color:#c74d78;letter-spacing:12px;text-shadow:3px 3px 0 #f2b1c7;">♡ MIOKI ♡</div>
-      <p style="color:#b83f6d;font-size:16px;letter-spacing:3px;margin-top:10px;">welcome to my little internet</p>
-      <div style="margin-top:20px;font:28px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
-      <div style="font-size:12px;color:#d4a0b8;margin-top:3px;" id="splashDate">2026.08.27</div>
-      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:20px;padding:10px 30px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;letter-spacing:2px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px 10px 20px;transform:translateY(10px);">
+      <div style="font:50px Georgia,serif;color:#c74d78;letter-spacing:12px;text-shadow:3px 3px 0 #f2b1c7;">MIOKI</div>
+      <p style="color:#b83f6d;font-size:14px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
+      <div style="margin-top:15px;font:24px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
+      <div style="font-size:11px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:20px;padding:8px 25px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font-weight:bold;letter-spacing:2px;box-shadow:2px 2px 0 rgba(90,35,55,.3);">
         ✦ 点击进入 ✦
       </div>
-      <p style="color:#d4a0b8;font-size:10px;margin-top:15px;letter-spacing:2px;">♡ made with love by Mioki ♡</p>
+    </div>
+    <div style="text-align:center;color:#d4a0b8;font-size:10px;letter-spacing:5px;">◆ ◇ ◆ ◇ ◆</div>
+    <div style="padding:12px 15px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
+      <span style="color:#d4a0b8;font-size:11px;padding:5px;">常用：</span>
+      <a href="https://www.bilibili.com/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📺 B站</a>
+      <a href="https://xn--iao3-lw4b.ws/languages/zh/works" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 AO3</a>
+      <a href="https://chat.deepseek.com/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">🤖 DeepSeek</a>
+      <a href="https://www.doubao.com/chat/" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">💬 豆包</a>
+      <a href="http://jwcnew.wxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" style="padding:5px 12px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 教务系统</a>
     </div>
   </div>
 </div>
 
-<script>
-function updateSplashTime(){
-  var n = new Date();
-  var time = String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0') + ':' + String(n.getSeconds()).padStart(2,'0');
-  var date = n.getFullYear() + '.' + String(n.getMonth()+1).padStart(2,'0') + '.' + String(n.getDate()).padStart(2,'0');
-  document.getElementById('splashTime').textContent = time;
-  document.getElementById('splashDate').textContent = date;
-}
-updateSplashTime();
-setInterval(updateSplashTime, 1000);
-</script>
-
 <div class="shell">
-<div class="topbar">♡ MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
-<div class="hero"><h1>MIOKI</h1><div class="tag">welcome to my little internet ♡</div><p>一个属于 Mioki 的小小网络角落。</p></div>
+<div class="topbar">MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
+<div class="hero"><h1>MIOKI</h1><div class="tag">welcome to my little internet</div><p>一个属于 Mioki 的小小网络角落。</p></div>
 <div class="status">♫ currently listening: <span id="statusSong">未播放</span>　|　🕰 <span id="currentTime">00:00:00</span>　|　last update: 2026.08.27</div>
 <div class="desktop">
 <aside>
-<div class="window"><div class="window-title">♡ PROFILE <span>_ □</span></div><div class="window-body">
-<div class="avatar">M<br>I<br>O<br>K<br>I<br>♡</div><b>Mioki</b><br><span style="color:#5c8b68" id="profileStatus">● online</span><br><br><span style="color:#b83f6d;" id="profileMood">♡ mood: dreamy</span><br><br><span id="profileBio">喜欢粉色、音乐、一些漂亮的小东西。</span>
-<br><br><div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;"><span style="font-size:11px;color:#a88;">♡ 本站已运行</span><br><span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span><span style="font-size:11px;color:#a88;">天</span></div>
+<div class="window"><div class="window-title">PROFILE <span>_ □</span></div><div class="window-body">
+<div class="avatar">M<br>I<br>O<br>K<br>I</div><b>Mioki</b><br><span style="color:#5c8b68" id="profileStatus">● online</span><br><br><span style="color:#b83f6d;" id="profileMood">mood: dreamy</span><br><br><span id="profileBio">喜欢粉色、音乐、一些漂亮的小东西。</span>
+<br><br><div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;"><span style="font-size:11px;color:#a88;">本站已运行</span><br><span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span><span style="font-size:11px;color:#a88;">天</span></div>
 </div></div>
 
 <div class="window"><div class="window-title">MENU <span>✦</span></div><div class="window-body menu">
-<a href="#home">♡ HOME / 首页</a>
-<a href="#longDiary">📖 MY DIARY / 日记</a>
-<a href="#album">📷 ALBUM / 相册</a>
-<a href="#music">♫ MUSIC / 音乐</a>
-<a href="#thoughts">💭 THOUGHTS / 碎碎念</a>
-<a href="#timeline">🕰 TIMELINE / 时间轴</a>
+<a href="#home">HOME / 首页</a>
+<a href="#longDiary">MY DIARY / 日记</a>
+<a href="#album">ALBUM / 相册</a>
+<a href="#music">MUSIC / 音乐</a>
+<a href="#thoughts">THOUGHTS / 碎碎念</a>
+<a href="#timeline">TIMELINE / 时间轴</a>
 <a href="https://user.qzone.qq.com/2050374994" target="_blank">🌟 QQ空间</a>
 <a href="https://music.163.com/#/user/home?id=8744058484" target="_blank">🎵 网易云音乐</a>
 <a href="https://www.douyin.com/user/46033301058" target="_blank">🎬 抖音</a>
 </div></div>
 
-<div class="window"><div class="window-title">♡ MY HOBBIES <span>✦</span></div><div class="window-body">
+<div class="window"><div class="window-title">MY HOBBIES <span>✦</span></div><div class="window-body">
 <div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="openPuzzle()">🧩 网页解谜 →</div>
 <div class="entry">🎨 画画</div>
 <div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://cns.agedongman.com.cn/','_blank')">📺 追番 →</div>
@@ -134,13 +135,13 @@ setInterval(updateSplashTime, 1000);
 <div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://www.airpano.com/','_blank')">☁️ 发呆 →</div>
 </div></div>
 
-<div class="window"><div class="window-title">WEB BADGES</div><div class="window-body"><span class="badge">90s WEB</span><span class="badge">♡ PINK</span><span class="badge">PERSONAL</span><span class="badge">BEST VIEWED</span></div></div>
+<div class="window"><div class="window-title">WEB BADGES</div><div class="window-body"><span class="badge">90s WEB</span><span class="badge">PINK</span><span class="badge">PERSONAL</span><span class="badge">BEST VIEWED</span></div></div>
 <div class="window"><div class="window-title">VISITOR</div><div class="window-body"><div class="counter" id="visitorCounter">000127</div></div></div>
 </aside>
 <main class="main" id="home">
 <div class="welcome-grid">
-<div class="window"><div class="window-title">♡ WELCOME <span>HOME</span></div><div class="window-body note"><h2 id="welcomeTitle">你好，欢迎来到这里 ♡</h2><p id="welcomeText">这里不是一个普通的网站。它更像是一间放在互联网上的小房间。可以写日记、放照片、收藏喜欢的歌，也可以什么都不做，只是偶尔回来看看。</p></div></div>
-<div class="window"><div class="window-title">NOW</div><div class="window-body state"><b>♡ TODAY'S MOOD</b><br><span id="nowMood">soft & dreamy</span><br><br><b>♡ STATUS</b><br><span id="nowStatus">making my little web</span><br><br><b>♡ LOCATION</b><br>somewhere in pink clouds</div></div>
+<div class="window"><div class="window-title">WELCOME <span>HOME</span></div><div class="window-body note"><h2 id="welcomeTitle">你好，欢迎来到这里</h2><p id="welcomeText">这里不是一个普通的网站。它更像是一间放在互联网上的小房间。可以写日记、放照片、收藏喜欢的歌，也可以什么都不做，只是偶尔回来看看。</p></div></div>
+<div class="window"><div class="window-title">NOW</div><div class="window-body state"><b>TODAY'S MOOD</b><br><span id="nowMood">soft & dreamy</span><br><br><b>STATUS</b><br><span id="nowStatus">making my little web</span><br><br><b>LOCATION</b><br>somewhere in pink clouds</div></div>
 </div>
 <div class="window"><div class="window-title">QUICK ACCESS</div><div class="window-body cards">
 <a class="card" href="#longDiary"><span class="ico">📖</span>我的日记</a>
@@ -148,14 +149,14 @@ setInterval(updateSplashTime, 1000);
 <a class="card" href="#music"><span class="ico">♫</span>我的音乐</a>
 </div></div>
 
-<div class="window" id="thoughts"><div class="window-title">💭 LITTLE THOUGHTS <span>THOUGHTS</span></div><div class="window-body content-list" id="thoughtsList">
-<div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料 ♡</div>
+<div class="window" id="thoughts"><div class="window-title">LITTLE THOUGHTS <span>THOUGHTS</span></div><div class="window-body content-list" id="thoughtsList">
+<div class="entry"><b>08.27</b>　今天的天气让人想喝冰冰的饮料</div>
 <div class="entry"><b>08.25</b>　最近一直在循环一首很喜欢的歌。</div>
-<div class="entry"><b>08.21</b>　一些乱七八糟的小想法 ✦</div>
+<div class="entry"><b>08.21</b>　一些乱七八糟的小想法</div>
 </div></div>
 
 <div class="window" id="album">
-  <div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div>
+  <div class="window-title">PHOTO ALBUM <span>ALBUM</span></div>
   <div class="window-body">
     <div class="photo-grid" id="photoGrid"></div>
     <div style="text-align:center;margin-top:10px;">
@@ -165,8 +166,8 @@ setInterval(updateSplashTime, 1000);
 </div>
 
 <div class="two">
-<div class="window" id="music"><div class="window-title">♫ NOW PLAYING <span>MUSIC</span></div><div class="window-body">
-<div class="music"><div class="disc" id="discIcon">♫</div><div><div class="song-title" id="songTitle">未选择歌曲</div><div class="song-info" id="songInfo">点击播放按钮开始 ♫</div></div></div>
+<div class="window" id="music"><div class="window-title">NOW PLAYING <span>MUSIC</span></div><div class="window-body">
+<div class="music"><div class="disc" id="discIcon">♫</div><div><div class="song-title" id="songTitle">未选择歌曲</div><div class="song-info" id="songInfo">点击播放按钮开始</div></div></div>
 <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
 <div class="music-controls">
 <button class="music-btn" id="btnPrev">◀◀</button>
@@ -177,36 +178,36 @@ setInterval(updateSplashTime, 1000);
 <div class="volume-control"><span>🔊</span><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70"><span class="volume-percent" id="volumePercent">70%</span></div>
 <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
 </div></div>
-<div class="window" id="timeline"><div class="window-title">🕰 TIMELINE</div><div class="window-body timeline">
-<div class="entry"><b>2026.08.27</b><br>网站优化完成 ♡</div>
-<div class="entry"><b>2026.08.26</b><br>网站正式建立 ✦</div>
+<div class="window" id="timeline"><div class="window-title">TIMELINE</div><div class="window-body timeline">
+<div class="entry"><b>2026.08.27</b><br>网站优化完成</div>
+<div class="entry"><b>2026.08.26</b><br>网站正式建立</div>
 <div class="entry"><b>2026.08.25</b><br>开始构思网站内容</div>
 </div></div>
 </div>
 
-<section class="window long-diary" id="longDiary"><div class="window-title">📖 MY DIARY <span>DIARY</span></div><div class="window-body">
-<article class="diary-paper"><div class="diary-meta">2026.08.27　♡　心情：★★★★★</div><h2>今天也要好好生活 ♡</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>
+<section class="window long-diary" id="longDiary"><div class="window-title">MY DIARY <span>DIARY</span></div><div class="window-body">
+<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>
 </div></section>
 </main>
 </div>
-<div class="footer">♡ made with love by Mioki ♡　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
+<div class="footer">made with love by Mioki　|　visitor no. <span id="footerCounter">000127</span>　|　<span class="secret" onclick="openEgg()">✦</span></div>
 </div>
 
 <button class="admin-open" id="adminBtn">🖥️ 管理</button>
 <button class="egg-open" id="eggBtn" onclick="openGame()">🐟</button>
 
-<div class="gate" id="adminGate"><div class="panel"><div class="panel-title">🔒 MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div><div class="panel-body">
-<b>♡ 管理后台</b><p>请输入管理密码：</p>
+<div class="gate" id="adminGate"><div class="panel"><div class="panel-title">MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div><div class="panel-body">
+<b>管理后台</b><p>请输入管理密码：</p>
 <input id="adminPass" type="password" placeholder="password" autocomplete="off">
 <button onclick="loginAdmin()">进入后台</button>
 <button onclick="closeAdmin()">取消</button>
 <p id="adminMsg" style="color:#b83f6d"></p>
 </div></div></div>
 
-<div class="egg" id="eggGate"><div class="panel"><div class="panel-title">✦ SECRET MESSAGE ✦ <span class="close-btn" onclick="closeEgg()">×</span></div><div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。♡<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">♡ 好啦，我发现了</button></div></div></div>
+<div class="egg" id="eggGate"><div class="panel"><div class="panel-title">SECRET MESSAGE <span class="close-btn" onclick="closeEgg()">×</span></div><div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">好啦，我发现了</button></div></div></div>
 
-<div class="egg" id="puzzleGate"><div class="panel" style="width:450px;"><div class="panel-title">🧩 PUZZLE GAMES <span class="close-btn" onclick="closePuzzle()">×</span></div><div class="panel-body">
-<b>♡ 我喜欢的网页解谜</b><div class="menu" style="margin-top:10px;">
+<div class="egg" id="puzzleGate"><div class="panel" style="width:450px;"><div class="panel-title">PUZZLE GAMES <span class="close-btn" onclick="closePuzzle()">×</span></div><div class="panel-body">
+<b>我喜欢的网页解谜</b><div class="menu" style="margin-top:10px;">
 <a href="https://yeshanbichu.pages.dev/" target="_blank">✦ 邺山彼处</a>
 <a href="https://anninganya-glitch.github.io/new/" target="_blank">✦ 我的秘密花园</a>
 <a href="https://qingmiaomiddleschool.github.io/404-ymail.com/" target="_blank">✦ 青苗中学英才培养计划</a>
@@ -215,10 +216,10 @@ setInterval(updateSplashTime, 1000);
 <a href="https://heiziheizi123.github.io/girlsinchat/start.html" target="_blank">✦ 聊天室的女孩们</a>
 </div></div></div></div>
 
-<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()"><div class="panel" style="width:500px;"><div class="panel-title">📷 PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div><div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div></div>
+<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()"><div class="panel" style="width:500px;"><div class="panel-title">PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div><div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div></div>
 
-<div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()"><div class="panel" style="width:450px;"><div class="panel-title">🐟 摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div><div class="panel-body">
-<b>♡ 摸鱼时间到~</b><div class="menu" style="margin-top:10px;">
+<div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()"><div class="panel" style="width:450px;"><div class="panel-title">摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div><div class="panel-body">
+<b>摸鱼时间到~</b><div class="menu" style="margin-top:10px;">
 <a href="https://poki.com/zh" target="_blank">🎮 游戏大全</a>
 <a href="https://www.cookinggames.com/" target="_blank">🍳 做饭小游戏</a>
 <a href="https://elternal.world/" target="_blank">🌍 Elternal World</a>
@@ -235,7 +236,7 @@ function loadSavedData(){
   var profile = JSON.parse(localStorage.getItem('mioki_profile'));
   if(profile){
     if(profile.bio) $('profileBio').textContent = profile.bio;
-    if(profile.mood) $('profileMood').textContent = '♡ mood: ' + profile.mood;
+    if(profile.mood) $('profileMood').textContent = 'mood: ' + profile.mood;
   }
   var status = JSON.parse(localStorage.getItem('mioki_status'));
   if(status) $('profileStatus').textContent = status;
@@ -251,12 +252,12 @@ function loadPhotos(){
   var photos = JSON.parse(localStorage.getItem('mioki_photos')) || [];
   if(photos.length === 0){
     photos = [
-      {src:'https://picsum.photos/400/300?random=1', label:'♡ 照片一'},
-      {src:'https://picsum.photos/400/300?random=2', label:'✦ 照片二'},
-      {src:'https://picsum.photos/400/300?random=3', label:'♡ 照片三'},
-      {src:'https://picsum.photos/400/300?random=4', label:'✦ 照片四'},
-      {src:'https://picsum.photos/400/300?random=5', label:'♡ 照片五'},
-      {src:'https://picsum.photos/400/300?random=6', label:'✦ 照片六'}
+      {src:'https://picsum.photos/400/300?random=1', label:'照片一'},
+      {src:'https://picsum.photos/400/300?random=2', label:'照片二'},
+      {src:'https://picsum.photos/400/300?random=3', label:'照片三'},
+      {src:'https://picsum.photos/400/300?random=4', label:'照片四'},
+      {src:'https://picsum.photos/400/300?random=5', label:'照片五'},
+      {src:'https://picsum.photos/400/300?random=6', label:'照片六'}
     ];
   }
   allPhotos = photos;
@@ -269,7 +270,7 @@ function renderPhotos(){
     html += '<div class="photo" onclick="showPhoto(\'' + allPhotos[i].src + '\')"><img src="' + allPhotos[i].src + '" loading="lazy"><span class="photo-label">' + allPhotos[i].label + '</span></div>';
   }
   $('photoGrid').innerHTML = html;
-  $('togglePhotos').textContent = showAllPhotos ? '♡ 收起' : '✦ 展开更多 (' + (allPhotos.length - 3) + '张)';
+  $('togglePhotos').textContent = showAllPhotos ? '收起' : '✦ 展开更多 (' + (allPhotos.length - 3) + '张)';
   $('togglePhotos').style.display = allPhotos.length > 3 ? 'inline-block' : 'none';
 }
 function togglePhotos(){showAllPhotos = !showAllPhotos;renderPhotos();}
@@ -291,13 +292,26 @@ function showPhoto(s){$('photoView').src=s;$('photoGate').style.display='flex'}f
 function openGame(){$('gameGate').style.display='flex'}function closeGame(){$('gameGate').style.display='none'}
 function openAdmin(){$('adminGate').style.display='flex';$('adminPass').value='';$('adminMsg').textContent='';setTimeout(function(){$('adminPass').focus()},50)}
 function closeAdmin(){$('adminGate').style.display='none'}
-function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='♡ 验证成功，正在跳转…';setTimeout(function(){window.location.href='admin.html'},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
+function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='验证成功，正在跳转…';setTimeout(function(){window.location.href='admin.html'},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
 function updateClock(){var n=new Date();$('currentTime').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0')}
 function updateSiteDays(){var s=new Date('2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
 function updateVisitorCounter(){var c=parseInt(localStorage.getItem('mioki_visitor_count')||'127');c++;localStorage.setItem('mioki_visitor_count',c);var d=String(c).padStart(6,'0');$('visitorCounter').textContent=d;$('footerCounter').textContent=d}
+function updateSplashTime(){
+  var n = new Date();
+  var time = String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0') + ':' + String(n.getSeconds()).padStart(2,'0');
+  var date = n.getFullYear() + '.' + String(n.getMonth()+1).padStart(2,'0') + '.' + String(n.getDate()).padStart(2,'0');
+  $('splashTime').textContent = time;
+  $('splashDate').textContent = date;
+}
 document.addEventListener('DOMContentLoaded',function(){
-  loadSavedData();
-  loadPhotos();
+  updateSplashTime();setInterval(updateSplashTime,1000);
+  var symbols=['✦','♡','❀'];var colors=['#c74d78','#d17697','#e8a0bb'];var container=$('fallContainer');var count=10;
+  for(var i=0;i<count;i++){
+    var el=document.createElement('span');el.className='fall';el.textContent=symbols[i%symbols.length];
+    el.style.left=(i/count*100)+'%';el.style.fontSize=(20+(i%3)*6)+'px';el.style.color=colors[i%colors.length];
+    el.style.animationDuration=(i%3+7)+'s';el.style.animationDelay=(i*0.8)+'s';container.appendChild(el);
+  }
+  loadSavedData();loadPhotos();
   $('adminBtn').addEventListener('click',openAdmin);
   $('btnPlay').addEventListener('click',togglePlay);
   $('btnStop').addEventListener('click',stopMusic);
