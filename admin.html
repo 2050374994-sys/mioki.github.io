@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1100">
+<title>♡ MIOKI ADMIN ♡</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-width:900px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px}
+.shell{width:800px;margin:30px auto;background:#fff8ee;border:3px double #673047;box-shadow:12px 12px 0 rgba(80,35,55,.3);padding:20px}
+h1{font:36px Georgia,serif;color:#c74d78;text-align:center;margin:0 0 20px}
+h2{font:18px Georgia,serif;color:#a44268;border-bottom:2px dotted #d17697;padding-bottom:5px;margin-top:25px}
+.section{background:#fffdf8;border:2px solid #d17697;padding:15px;margin-top:10px}
+label{display:block;margin-top:10px;font-weight:bold;color:#b83f6d}
+input,textarea,select{width:100%;padding:8px;margin-top:5px;border:1px solid #d17697;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
+textarea{height:80px;resize:vertical}
+button{padding:8px 20px;margin-top:10px;background:#f9dbe6;color:#673047;border:2px solid #8c4562;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+button:hover{background:#c74d78;color:#fff}
+.back{text-align:center;margin-top:20px}
+.back a{color:#b83f6d;text-decoration:none;font-size:14px}
+.back a:hover{text-decoration:underline}
+.success{color:#5c8b68;font-size:12px;margin-top:5px}
+</style>
+</head>
+<body>
+<div class="shell">
+<h1>♡ MIOKI ADMIN ♡</h1>
+
+<h2>👤 个人资料</h2>
+<div class="section">
+  <label>名字</label>
+  <input id="editName" placeholder="Mioki">
+  <label>签名</label>
+  <textarea id="editBio" placeholder="喜欢粉色、音乐、一些漂亮的小东西。"></textarea>
+  <label>心情 Mood</label>
+  <input id="editMood" placeholder="dreamy">
+  <button onclick="saveProfile()">保存资料 ♡</button>
+  <span class="success" id="profileMsg"></span>
+</div>
+
+<h2>💚 在线状态</h2>
+<div class="section">
+  <label>选择状态</label>
+  <select id="editStatus">
+    <option value="● online">● 在线</option>
+    <option value="● away">● 离开</option>
+    <option value="● busy">● 忙碌</option>
+    <option value="● offline">● 离线</option>
+  </select>
+  <button onclick="saveStatus()">保存状态 ♡</button>
+  <span class="success" id="statusMsg"></span>
+</div>
+
+<h2>📅 建站日期</h2>
+<div class="section">
+  <label>建站日期</label>
+  <input id="editStartDate" type="date" value="2026-08-26">
+  <button onclick="saveStartDate()">保存日期 ♡</button>
+  <span class="success" id="dateMsg"></span>
+</div>
+
+<h2>💬 欢迎语</h2>
+<div class="section">
+  <label>欢迎标题</label>
+  <input id="editWelcomeTitle" placeholder="你好，欢迎来到这里 ♡">
+  <label>欢迎内容</label>
+  <textarea id="editWelcomeText" placeholder="这里不是一个普通的网站…"></textarea>
+  <button onclick="saveWelcome()">保存欢迎语 ♡</button>
+  <span class="success" id="welcomeMsg"></span>
+</div>
+
+<h2>🎵 音乐管理</h2>
+<div class="section">
+  <label>歌曲名</label>
+  <input id="editSongTitle" placeholder="歌曲名">
+  <label>歌手</label>
+  <input id="editSongArtist" placeholder="歌手">
+  <label>歌曲链接</label>
+  <input id="editSongSrc" placeholder="http://...mp3">
+  <button onclick="addSong()">添加歌曲 ♡</button>
+  <button onclick="clearSongs()" style="background:#fff;color:#c74d78;">清空歌单</button>
+  <span class="success" id="songMsg"></span>
+  <div id="songList" style="margin-top:10px;"></div>
+</div>
+
+<h2>💭 碎碎念管理</h2>
+<div class="section">
+  <label>新碎碎念</label>
+  <input id="editThought" placeholder="写下今天想说的…">
+  <button onclick="addThought()">发布碎碎念 ♡</button>
+  <span class="success" id="thoughtMsg"></span>
+</div>
+
+<h2>📷 相册管理</h2>
+<div class="section">
+  <label>图片链接</label>
+  <input id="editPhoto" placeholder="http://...jpg">
+  <label>图片说明</label>
+  <input id="editPhotoLabel" placeholder="照片一">
+  <button onclick="addPhoto()">添加照片 ♡</button>
+  <button onclick="clearPhotos()" style="background:#fff;color:#c74d78;">清空相册</button>
+  <span class="success" id="photoMsg"></span>
+  <p style="font-size:11px;color:#a88;margin-top:10px;">提示：先上传图片到服务器 images 文件夹<br>链接格式：http://118.31.105.203/images/文件名.jpg</p>
+</div>
+
+<h2>💌 留言管理</h2>
+<div class="section">
+  <p>前往 Cusdis 后台管理留言：</p>
+  <button onclick="window.open('https://cusdis.com','_blank')">打开留言后台</button>
+</div>
+
+<div class="back">
+  <a href="index.html">← 返回网站</a>
+</div>
+</div>
+
+<script>
+function $(id){return document.getElementById(id)}
+
+function saveData(key, value){
+  localStorage.setItem('mioki_' + key, JSON.stringify(value));
+}
+function loadData(key){
+  var data = localStorage.getItem('mioki_' + key);
+  return data ? JSON.parse(data) : null;
+}
+
+// 个人资料
+function saveProfile(){
+  saveData('profile', {
+    name: $('editName').value || 'Mioki',
+    bio: $('editBio').value || '喜欢粉色、音乐、一些漂亮的小东西。',
+    mood: $('editMood').value || 'dreamy'
+  });
+  $('profileMsg').textContent = '✓ 已保存';
+}
+
+// 状态
+function saveStatus(){
+  saveData('status', $('editStatus').value);
+  $('statusMsg').textContent = '✓ 已保存';
+}
+
+// 建站日期
+function saveStartDate(){
+  localStorage.setItem('mioki_startDate', $('editStartDate').value);
+  $('dateMsg').textContent = '✓ 已保存';
+}
+
+// 欢迎语
+function saveWelcome(){
+  saveData('welcome', {
+    title: $('editWelcomeTitle').value,
+    text: $('editWelcomeText').value
+  });
+  $('welcomeMsg').textContent = '✓ 已保存';
+}
+
+// 歌曲
+function addSong(){
+  var songs = loadData('songs') || [];
+  songs.push({
+    title: $('editSongTitle').value || '未命名',
+    artist: $('editSongArtist').value || '未知',
+    src: $('editSongSrc').value
+  });
+  saveData('songs', songs);
+  $('songMsg').textContent = '✓ 已添加';
+  renderSongs();
+  $('editSongTitle').value='';$('editSongArtist').value='';$('editSongSrc').value='';
+}
+function clearSongs(){
+  saveData('songs', []);
+  renderSongs();
+  $('songMsg').textContent = '✓ 已清空';
+}
+function renderSongs(){
+  var songs = loadData('songs') || [];
+  var html = '';
+  songs.forEach(function(s, i){
+    html += '<div style="padding:5px 0;border-bottom:1px dotted #d17697;"><b>♫ ' + s.title + '</b> - ' + s.artist + '</div>';
+  });
+  $('songList').innerHTML = html || '<span style="color:#a88;">暂无歌曲</span>';
+}
+
+// 碎碎念
+function addThought(){
+  var thoughts = loadData('thoughts') || [];
+  var now = new Date();
+  var date = String(now.getMonth()+1).padStart(2,'0') + '.' + String(now.getDate()).padStart(2,'0');
+  thoughts.unshift({date: date, text: $('editThought').value});
+  saveData('thoughts', thoughts);
+  $('thoughtMsg').textContent = '✓ 已发布';
+  $('editThought').value='';
+}
+
+// 照片
+function addPhoto(){
+  var photos = loadData('photos') || [];
+  photos.push({src: $('editPhoto').value, label: $('editPhotoLabel').value || '照片'});
+  saveData('photos', photos);
+  $('photoMsg').textContent = '✓ 已添加';
+  $('editPhoto').value='';$('editPhotoLabel').value='';
+}
+function clearPhotos(){
+  saveData('photos', []);
+  $('photoMsg').textContent = '✓ 已清空';
+}
+
+// 加载已有数据
+function loadAll(){
+  var profile = loadData('profile');
+  if(profile){
+    $('editName').value = profile.name;
+    $('editBio').value = profile.bio;
+    $('editMood').value = profile.mood;
+  }
+  var status = loadData('status');
+  if(status) $('editStatus').value = status;
+  var date = localStorage.getItem('mioki_startDate');
+  if(date) $('editStartDate').value = date;
+  var welcome = loadData('welcome');
+  if(welcome){
+    $('editWelcomeTitle').value = welcome.title;
+    $('editWelcomeText').value = welcome.text;
+  }
+  renderSongs();
+}
+
+loadAll();
+</script>
+</body>
+</html>
