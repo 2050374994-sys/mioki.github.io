@@ -24,9 +24,9 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .menu a{display:block;padding:5px 7px;border-bottom:1px dotted #d9a0b4}.menu a:hover{background:#ffe7ef;text-decoration:none}
 .badge{display:inline-block;padding:2px 5px;margin:2px;border:1px solid #8c4562;background:#fff0f5;font-size:10px}.counter{background:#422433;color:#fff;text-align:center;padding:3px;letter-spacing:4px}
 .main{min-width:0}.welcome-grid,.two{display:grid;grid-template-columns:1fr 250px;gap:10px}.two{grid-template-columns:1fr 1fr}
-.note{min-height:130px;background:#fff1b9;border:1px solid #c99e57;transform:rotate(-.6deg);padding:15px;box-shadow:4px 4px 0 rgba(90,55,30,.12)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#a44268}
+.note{min-height:130px;background:#fff1b9;border:1px solid #c99e57;padding:15px;box-shadow:4px 4px 0 rgba(90,55,30,.12)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#a44268}
 .state{background:#f9e0e8;border:1px solid #d17697;padding:10px}.state b{color:#b83f6d}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:1px solid #d17697;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:1px solid #d17697;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
 .card:hover{background:#ffe7ef;text-decoration:none}
 .content-list{min-height:120px}.entry{padding:8px 0;border-bottom:1px dotted #d17697}.entry:last-child{border:0}.entry b{color:#b83f6d}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -37,7 +37,7 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .photo:hover .photo-label{opacity:1}
 .timeline .entry{position:relative;padding-left:18px}.timeline .entry:before{content:"";position:absolute;left:3px;top:12px;width:7px;height:7px;border:1px solid #b83f6d;background:#fff;border-radius:50%}
 .footer{text-align:center;margin:10px;padding:12px;background:#ffe8f0;border:3px double #d17697}.secret{opacity:.45;cursor:pointer}
-#home,#longDiary,#album,#music,#thoughts,#timeline,#guestbook{scroll-margin-top:60px}
+#home,#longDiary,#album,#music,#thoughts,#timeline{scroll-margin-top:60px}
 .music{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center}
 .disc{width:55px;height:55px;border-radius:50%;background:#6d2f49;border:5px solid #d986a4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s}
 .disc.playing{animation:spin 3s linear infinite}
@@ -55,11 +55,6 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 .volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f0d0dc;border:1px solid #d17697;outline:none;cursor:pointer}
 .volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#c74d78;border:2px solid #fff;border-radius:50%;cursor:pointer}
 .volume-percent{font-size:11px;color:#a88;min-width:30px;text-align:right}
-.guestbook-wrapper{margin-top:12px}
-.guestbook-wrapper input,.guestbook-wrapper textarea{font-family:"Comic Sans MS","华文细黑","Microsoft YaHei",cursive !important;border:2px dotted #d17697 !important;background:#fffdf8 !important;color:#673047 !important;padding:10px !important;font-size:13px !important}
-.guestbook-wrapper button{background:#f9dbe6 !important;color:#673047 !important;border:2px solid #8c4562 !important;font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;padding:8px 16px !important;cursor:pointer !important}
-.guestbook-wrapper .cusdis-comment-content{font-family:"Comic Sans MS","华文细黑","Microsoft YaHei",cursive !important;font-size:14px !important;line-height:1.9 !important;color:#5a2d40 !important}
-.guestbook-wrapper .cusdis-comment-author{font-family:"Courier New","Microsoft YaHei",monospace !important;font-weight:bold !important;color:#c74d78 !important}
 .long-diary{margin-top:10px}.long-diary .window-body{padding:14px 16px}
 .diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}.diary-paper:last-child{margin-bottom:0}
 .diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
@@ -93,7 +88,6 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <a href="#music">♫ MUSIC / 音乐</a>
 <a href="#thoughts">💭 THOUGHTS / 碎碎念</a>
 <a href="#timeline">🕰 TIMELINE / 时间轴</a>
-<a href="#guestbook">💌 GUESTBOOK / 留言</a>
 <a href="https://user.qzone.qq.com/2050374994" target="_blank">🌟 QQ空间</a>
 <a href="https://music.163.com/#/user/home?id=8744058484" target="_blank">🎵 网易云音乐</a>
 <a href="https://www.douyin.com/user/46033301058" target="_blank">🎬 抖音</a>
@@ -102,8 +96,9 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <div class="window"><div class="window-title">♡ MY HOBBIES <span>✦</span></div><div class="window-body">
 <div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="openPuzzle()">🧩 网页解谜 →</div>
 <div class="entry">🎨 画画</div>
-<div class="entry">📺 追番</div>
-<div class="entry">☁️ 发呆</div>
+<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://cns.agedongman.com.cn/','_blank')">📺 追番 →</div>
+<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://www.mangacopy.com/','_blank')">📚 看漫画 →</div>
+<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://www.airpano.com/','_blank')">☁️ 发呆 →</div>
 </div></div>
 
 <div class="window"><div class="window-title">WEB BADGES</div><div class="window-body"><span class="badge">90s WEB</span><span class="badge">♡ PINK</span><span class="badge">PERSONAL</span><span class="badge">BEST VIEWED</span></div></div>
@@ -118,7 +113,6 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <a class="card" href="#longDiary"><span class="ico">📖</span>我的日记</a>
 <a class="card" href="#album"><span class="ico">📷</span>我的相册</a>
 <a class="card" href="#music"><span class="ico">♫</span>我的音乐</a>
-<a class="card" href="#guestbook"><span class="ico">💌</span>访客留言</a>
 </div></div>
 
 <div class="window" id="thoughts"><div class="window-title">💭 LITTLE THOUGHTS <span>THOUGHTS</span></div><div class="window-body content-list" id="thoughtsList">
@@ -127,11 +121,15 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <div class="entry"><b>08.21</b>　一些乱七八糟的小想法 ✦</div>
 </div></div>
 
-<div class="window" id="album"><div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div><div class="window-body photo-grid" id="photoGrid">
-<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=1')"><img src="https://picsum.photos/400/300?random=1" loading="lazy"><span class="photo-label">♡ 照片一</span></div>
-<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=2')"><img src="https://picsum.photos/400/300?random=2" loading="lazy"><span class="photo-label">✦ 照片二</span></div>
-<div class="photo" onclick="showPhoto('https://picsum.photos/400/300?random=3')"><img src="https://picsum.photos/400/300?random=3" loading="lazy"><span class="photo-label">♡ 照片三</span></div>
-</div></div>
+<div class="window" id="album">
+  <div class="window-title">📷 PHOTO ALBUM <span>ALBUM</span></div>
+  <div class="window-body">
+    <div class="photo-grid" id="photoGrid"></div>
+    <div style="text-align:center;margin-top:10px;">
+      <button id="togglePhotos" onclick="togglePhotos()" style="padding:6px 14px;background:#f9dbe6;color:#673047;border:2px solid #8c4562;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+    </div>
+  </div>
+</div>
 
 <div class="two">
 <div class="window" id="music"><div class="window-title">♫ NOW PLAYING <span>MUSIC</span></div><div class="window-body">
@@ -147,18 +145,11 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
 </div></div>
 <div class="window" id="timeline"><div class="window-title">🕰 TIMELINE</div><div class="window-body timeline">
-<div class="entry"><b>2026.08</b><br>开始慢慢制作这个小网站。</div>
-<div class="entry"><b>2026.07</b><br>留下一个夏天的记忆。</div>
+<div class="entry"><b>2026.08.27</b><br>网站优化完成 ♡</div>
+<div class="entry"><b>2026.08.26</b><br>网站正式建立 ✦</div>
+<div class="entry"><b>2026.08.25</b><br>开始构思网站内容</div>
 </div></div>
 </div>
-
-<div class="window" id="guestbook"><div class="window-title">💌 GUESTBOOK <span>MESSAGE</span></div><div class="window-body">
-<b>♡ 来过这里的话，留下一个小小的脚印吧。</b><br>
-<small>留言会同步到云端，所有人都能看到哦。</small>
-<div style="text-align:center;margin-top:10px;padding:8px;background:#fff6fa;border:1px dashed #d17697;color:#b83f6d;font-size:11px;">✦ 留言后下拉查看历史留言 ✦</div>
-<div class="guestbook-wrapper"><div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="dc32588c-9c48-45ed-a2a4-340648df64f6" data-page-id="mioki-guestbook" data-page-url="http://118.31.105.203/" data-page-title="Mioki's Guestbook" data-theme="light"></div>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script></div>
-</div></div>
 
 <section class="window long-diary" id="longDiary"><div class="window-title">📖 MY DIARY <span>DIARY</span></div><div class="window-body">
 <article class="diary-paper"><div class="diary-meta">2026.08.27　♡　心情：★★★★★</div><h2>今天也要好好生活 ♡</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>
@@ -208,18 +199,15 @@ a,button,.photo,.entry,.secret,.close-btn{cursor:url('data:image/svg+xml;utf8,<s
 <script>
 function $(id){return document.getElementById(id)}
 
-// 加载 localStorage 数据
 function loadSavedData(){
   var profile = JSON.parse(localStorage.getItem('mioki_profile'));
   if(profile){
-    if(profile.name) document.querySelector('.avatar b') && (document.querySelector('.avatar').innerHTML = profile.name.split('').join('<br>'));
     if(profile.bio) $('profileBio').textContent = profile.bio;
     if(profile.mood) $('profileMood').textContent = '♡ mood: ' + profile.mood;
+    if(profile.name) $('profileName') && ($('profileName').textContent = profile.name);
   }
   var status = JSON.parse(localStorage.getItem('mioki_status'));
-  if(status){
-    $('profileStatus').textContent = status;
-  }
+  if(status) $('profileStatus').textContent = status;
   var welcome = JSON.parse(localStorage.getItem('mioki_welcome'));
   if(welcome){
     if(welcome.title) $('welcomeTitle').textContent = welcome.title;
@@ -227,7 +215,40 @@ function loadSavedData(){
   }
 }
 
-var playlist = JSON.parse(localStorage.getItem('mioki_songs')) || [{title:"Killer Neuron",artist:"藍月なくる",src:"http://118.31.105.203/music/KillerNeuron.mp3"}];
+// 相册
+var allPhotos = [];
+var showAllPhotos = false;
+function loadPhotos(){
+  var photos = JSON.parse(localStorage.getItem('mioki_photos')) || [];
+  if(photos.length === 0){
+    photos = [
+      {src:'https://picsum.photos/400/300?random=1', label:'♡ 照片一'},
+      {src:'https://picsum.photos/400/300?random=2', label:'✦ 照片二'},
+      {src:'https://picsum.photos/400/300?random=3', label:'♡ 照片三'},
+      {src:'https://picsum.photos/400/300?random=4', label:'✦ 照片四'},
+      {src:'https://picsum.photos/400/300?random=5', label:'♡ 照片五'},
+      {src:'https://picsum.photos/400/300?random=6', label:'✦ 照片六'}
+    ];
+  }
+  allPhotos = photos;
+  renderPhotos();
+}
+function renderPhotos(){
+  var html = '';
+  var showCount = showAllPhotos ? allPhotos.length : 3;
+  for(var i = 0; i < allPhotos.length && i < showCount; i++){
+    html += '<div class="photo" onclick="showPhoto(\'' + allPhotos[i].src + '\')"><img src="' + allPhotos[i].src + '" loading="lazy"><span class="photo-label">' + allPhotos[i].label + '</span></div>';
+  }
+  $('photoGrid').innerHTML = html;
+  $('togglePhotos').textContent = showAllPhotos ? '♡ 收起' : '✦ 展开更多 (' + (allPhotos.length - 3) + '张)';
+  $('togglePhotos').style.display = allPhotos.length > 3 ? 'inline-block' : 'none';
+}
+function togglePhotos(){
+  showAllPhotos = !showAllPhotos;
+  renderPhotos();
+}
+
+var playlist = JSON.parse(localStorage.getItem('mioki_songs')) || [{title:"Killer Neuron",artist:"藍月なくる",src:"https://2050374994-sys.github.io/mioki.github.io/KillerNeuron.mp3"}];
 var currentTrack=0,isPlaying=false,audio=new Audio();
 function setVolume(v){audio.volume=v/100;$('volumePercent').textContent=v+'%'}
 function loadTrack(i){currentTrack=i;audio.src=playlist[i].src;audio.load();$('songTitle').textContent=playlist[i].title;$('songInfo').textContent=playlist[i].artist;$('statusSong').textContent=playlist[i].title;$('timeDisplay').textContent='00:00 / 00:00';$('progressFill').style.width='0%'}
@@ -247,10 +268,11 @@ function openAdmin(){$('adminGate').style.display='flex';$('adminPass').value=''
 function closeAdmin(){$('adminGate').style.display='none'}
 function loginAdmin(){var p=$('adminPass').value;if(p==='20070506'){$('adminMsg').textContent='♡ 验证成功，正在跳转…';setTimeout(function(){window.location.href='admin.html'},500)}else{$('adminMsg').textContent='密码不正确。';$('adminPass').select()}}
 function updateClock(){var n=new Date();$('currentTime').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0')}
-function updateSiteDays(){var s=new Date(localStorage.getItem('mioki_startDate')||'2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
+function updateSiteDays(){var s=new Date('2026-08-26');var n=new Date();var d=Math.floor((n-s)/(1000*60*60*24));if(d<0)d=0;$('siteDays').textContent=d}
 function updateVisitorCounter(){var c=parseInt(localStorage.getItem('mioki_visitor_count')||'127');c++;localStorage.setItem('mioki_visitor_count',c);var d=String(c).padStart(6,'0');$('visitorCounter').textContent=d;$('footerCounter').textContent=d}
 document.addEventListener('DOMContentLoaded',function(){
   loadSavedData();
+  loadPhotos();
   $('adminBtn').addEventListener('click',openAdmin);
   $('btnPlay').addEventListener('click',togglePlay);
   $('btnStop').addEventListener('click',stopMusic);
@@ -264,7 +286,6 @@ document.addEventListener('DOMContentLoaded',function(){
 $('eggGate').addEventListener('click',function(e){if(e.target===this)closeEgg()});
 $('puzzleGate').addEventListener('click',function(e){if(e.target===this)closePuzzle()});
 $('adminGate').addEventListener('click',function(e){if(e.target===this)closeAdmin()});
-window.addEventListener('load',function(){setTimeout(function(){var n=document.querySelector('.guestbook-wrapper input[type="text"]');var m=document.querySelector('.guestbook-wrapper textarea');if(n)n.placeholder='你的名字 ♡';if(m)m.placeholder='写下想说的话… ✦';var b=document.querySelector('.guestbook-wrapper button[type="submit"]');if(b)b.textContent='♡ 留下脚印'},1500)});
 </script>
 </body>
 </html>
