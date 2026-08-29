@@ -293,8 +293,8 @@ function renderPhotos(){
 function togglePhotos(){showAllPhotos = !showAllPhotos;renderPhotos();}
 var allThoughts = JSON.parse(localStorage.getItem('mioki_thoughts')) || [
   {date:'08.27', text:'今天的天气让人想喝冰冰的饮料'},
-  {date:'08.25', text:'最近一直在循环一首很喜欢的歌。'},
-  {date:'08.21', text:'一些乱七八糟的小想法'}
+  {date:'08.25', text:'做网站好好玩www'},
+  {date:'08.21', text:'最近一直在看小说'}
 ];
 var showAllThoughts = false;
 function renderThoughts(){
@@ -318,7 +318,7 @@ function renderDiary(){
   var diaries = JSON.parse(localStorage.getItem('mioki_diaries')) || [];
   var html = '';
   if(diaries.length === 0){
-    html = '<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>';
+    html = '<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>日记已锁定，除站主外不允许查看。</p></article>';
   } else {
     diaries.forEach(function(d){
       html += '<article class="diary-paper"><div class="diary-meta">' + d.date + '　心情：' + d.mood + '</div><h2>' + d.title + '</h2><p>' + d.content + '</p></article>';
