@@ -6,32 +6,32 @@
 <title>MIOKI ADMIN</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-width:900px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:28px 28px,47px 47px}
-.shell{width:800px;margin:30px auto;background:#fff8ee;border:5px double #8c4562;box-shadow:8px 8px 0 rgba(80,35,55,.3);padding:20px}
-h1{font:36px Georgia,serif;color:#c74d78;text-align:center;margin:0 0 10px;text-shadow:3px 3px 0 #f2b1c7;letter-spacing:3px}
-.subtitle{text-align:center;color:#a88;font-size:11px;margin-bottom:20px;letter-spacing:2px}
-h2{font:16px Georgia,serif;color:#a44268;border-bottom:2px dashed #d17697;padding-bottom:5px;margin-top:25px}
+body{margin:0;min-width:900px;color:#8a5a6e;font:13px "Courier New","Microsoft YaHei",monospace;background:#f5dde8;background-image:radial-gradient(#f0d0dc 1px,transparent 1px),radial-gradient(rgba(255,250,252,.7) 1px,transparent 1px);background-size:28px 28px,47px 47px}
+.shell{width:800px;margin:30px auto;background:#fffaf5;border:5px double #b87a90;box-shadow:6px 6px 0 rgba(160,100,120,.18);padding:20px}
+h1{font:36px Georgia,serif;color:#d989a8;text-align:center;margin:0 0 10px;text-shadow:3px 3px 0 #f9dce8;letter-spacing:3px}
+.subtitle{text-align:center;color:#b895a5;font-size:11px;margin-bottom:20px;letter-spacing:2px}
+h2{font:16px Georgia,serif;color:#c48aa0;border-bottom:2px dashed #e0a8bc;padding-bottom:5px;margin-top:25px}
 h2:before{content:"✦ "}
 h2:after{content:" ✦"}
-.section{background:#fffdf8;border:3px double #d17697;padding:15px;margin-top:10px;box-shadow:3px 3px 0 rgba(140,69,98,.1)}
-label{display:block;margin-top:10px;font-weight:bold;color:#b83f6d;letter-spacing:1px}
+.section{background:#fffaf5;border:3px double #e0a8bc;padding:15px;margin-top:10px;box-shadow:3px 3px 0 rgba(180,120,140,.1)}
+label{display:block;margin-top:10px;font-weight:bold;color:#c48aa0;letter-spacing:1px}
 label:before{content:"♡ "}
-input,textarea,select{width:100%;padding:8px;margin-top:5px;border:3px inset #d17697;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047;outline:none}
-input:focus,textarea:focus,select:focus{border-color:#c74d78;background:#fff6fa}
+input,textarea,select{width:100%;padding:8px;margin-top:5px;border:3px inset #e0a8bc;background:#fffaf5;font:13px "Courier New","Microsoft YaHei",monospace;color:#8a5a6e;outline:none}
+input:focus,textarea:focus,select:focus{border-color:#d989a8;background:#fce8f0}
 textarea{height:80px;resize:vertical}
-button{padding:8px 20px;margin-top:10px;background:#f9dbe6;color:#673047;border:3px outset #d17697;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold;box-shadow:2px 2px 0 rgba(90,35,55,.3)}
-button:active{border:3px inset #d17697;box-shadow:none;transform:translateY(1px)}
-button:hover{background:#f2b1c7}
-.back{text-align:center;margin-top:25px;padding-top:15px;border-top:2px dashed #d17697}
-.back a{color:#b83f6d;text-decoration:none;font-size:14px;font-weight:bold}
+button{padding:8px 20px;margin-top:10px;background:#fce8f0;color:#8a5a6e;border:3px outset #e0c4d0;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold;box-shadow:2px 2px 0 rgba(160,110,130,.15)}
+button:active{border:3px inset #e0a8bc;box-shadow:none;transform:translateY(1px)}
+button:hover{background:#f9dce8}
+.back{text-align:center;margin-top:25px;padding-top:15px;border-top:2px dashed #e0a8bc}
+.back a{color:#c48aa0;text-decoration:none;font-size:14px;font-weight:bold}
 .back a:hover{text-decoration:underline}
-.success{color:#5c8b68;font-size:12px;margin-top:5px;font-weight:bold}
-.tip{background:#fff6fa;border:1px dashed #d17697;padding:8px;margin-top:10px;color:#a88;font-size:11px}
-#editStatus option[value="● online"]{color:#5c8b68;font-weight:bold}
-#editStatus option[value="● offline"]{color:#c74d78;font-weight:bold}
-.song-item{padding:5px 0;border-bottom:1px dotted #d17697}
-.song-item b{color:#c74d78}
-.footer-note{text-align:center;margin-top:20px;color:#d4a0b8;font-size:10px;letter-spacing:3px}
+.success{color:#8a9a5b;font-size:12px;margin-top:5px;font-weight:bold}
+.tip{background:#fce8f0;border:1px dashed #e0a8bc;padding:8px;margin-top:10px;color:#b895a5;font-size:11px}
+#editStatus option[value="● online"]{color:#8a9a5b;font-weight:bold}
+#editStatus option[value="● offline"]{color:#c48aa0;font-weight:bold}
+.song-item{padding:5px 0;border-bottom:1px dotted #e0a8bc}
+.song-item b{color:#d989a8}
+.footer-note{text-align:center;margin-top:20px;color:#b895a5;font-size:10px;letter-spacing:3px}
 </style>
 </head>
 <body>
@@ -90,7 +90,7 @@ button:hover{background:#f2b1c7}
   <label>歌曲链接</label>
   <input id="editSongSrc" placeholder="https://...mp3">
   <button onclick="addSong()">添加歌曲</button>
-  <button onclick="clearSongs()" style="background:#fff;color:#c74d78;">清空歌单</button>
+  <button onclick="clearSongs()" style="background:#fff;color:#c48aa0;">清空歌单</button>
   <span class="success" id="songMsg"></span>
   <div id="songList" style="margin-top:10px;"></div>
 </div>
@@ -111,7 +111,7 @@ button:hover{background:#f2b1c7}
   <label>内容</label>
   <input id="timelineText" placeholder="比如：网站正式建立">
   <button onclick="addTimeline()">添加时间线</button>
-  <button onclick="clearTimeline()" style="background:#fff;color:#c74d78;">清空时间线</button>
+  <button onclick="clearTimeline()" style="background:#fff;color:#c48aa0;">清空时间线</button>
   <span class="success" id="timelineMsg"></span>
   <div id="timelineList" style="margin-top:15px;"></div>
 </div>
@@ -144,7 +144,7 @@ button:hover{background:#f2b1c7}
   <label>图片说明</label>
   <input id="editPhotoLabel" placeholder="照片一">
   <button onclick="addPhoto()">添加照片</button>
-  <button onclick="clearPhotos()" style="background:#fff;color:#c74d78;">清空相册</button>
+  <button onclick="clearPhotos()" style="background:#fff;color:#c48aa0;">清空相册</button>
   <span class="success" id="photoMsg"></span>
   <div class="tip">提示：先上传图片到 GitHub 仓库的 images 文件夹<br>链接格式：https://2050374994-sys.github.io/mioki.github.io/images/文件名.jpg</div>
 </div>
@@ -211,7 +211,7 @@ function renderSongs(){
   songs.forEach(function(s){
     html += '<div class="song-item"><b>♫ ' + s.title + '</b> - ' + s.artist + '</div>';
   });
-  $('songList').innerHTML = html || '<span style="color:#a88;">暂无歌曲</span>';
+  $('songList').innerHTML = html || '<span style="color:#b895a5;">暂无歌曲</span>';
 }
 
 function addThought(){
@@ -228,9 +228,9 @@ function renderThoughtAdmin(){
   var thoughts = loadData('thoughts') || [];
   var html = '';
   thoughts.forEach(function(t, i){
-    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteThought(' + i + ')">✕</span></div>';
+    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c48aa0;cursor:pointer;" onclick="deleteThought(' + i + ')">✕</span></div>';
   });
-  $('thoughtList').innerHTML = html || '<span style="color:#a88;">暂无碎碎念</span>';
+  $('thoughtList').innerHTML = html || '<span style="color:#b895a5;">暂无碎碎念</span>';
 }
 function deleteThought(index){
   var thoughts = loadData('thoughts') || [];
@@ -253,9 +253,9 @@ function renderTimelineAdmin(){
   var timelines = loadData('timelines') || [];
   var html = '';
   timelines.forEach(function(t, i){
-    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteTimeline(' + i + ')">✕</span></div>';
+    html += '<div class="song-item"><b>' + t.date + '</b> ' + t.text + ' <span style="float:right;color:#c48aa0;cursor:pointer;" onclick="deleteTimeline(' + i + ')">✕</span></div>';
   });
-  $('timelineList').innerHTML = html || '<span style="color:#a88;">暂无时间线</span>';
+  $('timelineList').innerHTML = html || '<span style="color:#b895a5;">暂无时间线</span>';
 }
 function deleteTimeline(index){
   var timelines = loadData('timelines') || [];
@@ -288,9 +288,9 @@ function renderDiaryAdmin(){
   var diaries = loadData('diaries') || [];
   var html = '';
   diaries.forEach(function(d, i){
-    html += '<div class="song-item"><b>' + d.date + '</b> ' + d.title + ' <span style="float:right;color:#c74d78;cursor:pointer;" onclick="deleteDiary(' + i + ')">✕</span></div>';
+    html += '<div class="song-item"><b>' + d.date + '</b> ' + d.title + ' <span style="float:right;color:#c48aa0;cursor:pointer;" onclick="deleteDiary(' + i + ')">✕</span></div>';
   });
-  $('diaryAdminList').innerHTML = html || '<span style="color:#a88;">暂无日记</span>';
+  $('diaryAdminList').innerHTML = html || '<span style="color:#b895a5;">暂无日记</span>';
 }
 function deleteDiary(index){
   var diaries = loadData('diaries') || [];
