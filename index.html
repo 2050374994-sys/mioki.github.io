@@ -6,78 +6,86 @@
 <title>MIOKI // PRIVATE WEB DESKTOP</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-width:1100px;color:#673047;font:13px "Courier New","Microsoft YaHei",monospace;background:#e8b5c8;background-image:radial-gradient(#d9a890 1px,transparent 1px),radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);background-size:28px 28px,47px 47px}
-a{color:#b83f6d;text-decoration:underline}a:hover{text-decoration:none}
+body{margin:0;min-width:1100px;color:#8a5a6e;font:13px "Courier New","Microsoft YaHei",monospace;background:#f5dde8;background-image:radial-gradient(#f0d0dc 1px,transparent 1px),radial-gradient(rgba(255,250,252,.7) 1px,transparent 1px);background-size:28px 28px,47px 47px}
+a{color:#c48aa0;text-decoration:underline}a:hover{text-decoration:none}
 a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.card{cursor:pointer}
 ::-webkit-scrollbar{width:14px}
-::-webkit-scrollbar-track{background:#f7dbe6;border-left:1px solid #d4a5b5;border-right:1px solid #fff}
-::-webkit-scrollbar-thumb{background:#d17697;border:2px outset #e8a0bb}
-::-webkit-scrollbar-thumb:hover{background:#c74d78}
-.shell{width:1060px;margin:28px auto 60px;background:#fff8ee;border:3px double #673047;box-shadow:6px 6px 0 rgba(80,35,55,.25)}
-.topbar{height:36px;padding:6px 11px;background:#c74d78;color:#fff;border-bottom:2px solid #673047;font-weight:bold;font-size:12px;letter-spacing:1px}.topbar span{float:right;letter-spacing:4px}
-.hero{margin:10px;padding:22px 28px;height:210px;border:2px dashed #d17697;background:linear-gradient(135deg,#f2b1c7,#eca0bb 55%,#f6c8d8);position:relative;overflow:hidden}
-.hero:before{content:"♡  ✦  ♡  ✦  ♡  ✦  ♡";position:absolute;right:22px;top:14px;color:#fff;font-size:15px;letter-spacing:6px}.hero:after{content:"1999 — 2000 — 2026";position:absolute;right:24px;bottom:14px;color:#fff8fb;font-size:11px}
-.hero h1{margin:5px 0 0;font:72px Georgia,serif;letter-spacing:12px;color:#fff;text-shadow:4px 4px 0 #a43e64}.tag{display:inline-block;background:#fff4f7;border:1px solid #c75b81;padding:3px 10px;margin-top:8px}
-.status{margin:0 10px 10px;padding:6px 9px;background:#fff0f5;border:1px dotted #d17697;white-space:nowrap;overflow:hidden;text-align:center}
+::-webkit-scrollbar-track{background:#fce8f0;border-left:1px solid #e0c4d0;border-right:1px solid #fff}
+::-webkit-scrollbar-thumb{background:#e0a8bc;border:2px outset #f0c8d8}
+::-webkit-scrollbar-thumb:hover{background:#d989a8}
+.shell{width:1060px;margin:28px auto 60px;background:#fffaf5;border:3px double #b87a90;box-shadow:6px 6px 0 rgba(160,100,120,.18)}
+.topbar{height:36px;padding:6px 11px;background:#d989a8;color:#fff;border-bottom:2px solid #b87a90;font-weight:bold;font-size:12px;letter-spacing:1px}.topbar span{float:right;letter-spacing:4px}
+.hero{margin:10px;padding:22px 28px;height:210px;border:2px dashed #e0a8bc;background:linear-gradient(135deg,#f9dce8,#f5d0de 55%,#fbe4ee);position:relative;overflow:hidden}
+.hero:before{content:"♡  ✦  ♡  ✦  ♡  ✦  ♡";position:absolute;right:22px;top:14px;color:#fff;font-size:15px;letter-spacing:6px}.hero:after{content:"1999 — 2000 — 2026";position:absolute;right:24px;bottom:14px;color:#fffaf5;font-size:11px}
+.hero h1{margin:5px 0 0;font:72px Georgia,serif;letter-spacing:12px;color:#fff;text-shadow:4px 4px 0 #d989a8}.tag{display:inline-block;background:#fffaf5;border:1px solid #e0a8bc;padding:3px 10px;margin-top:8px}
+.status{margin:0 10px 10px;padding:6px 9px;background:#fce8f0;border:1px dotted #e0a8bc;white-space:nowrap;overflow:hidden;text-align:center}
 .desktop{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:0 10px}
-.window{background:#fffdf8;border:2px solid #8c4562;box-shadow:4px 4px 0 rgba(140,69,98,.2),inset 1px 1px 0 #fff;margin-bottom:10px}
-.window-title{background:#c74d78;color:#fff;padding:5px 8px;font-weight:bold;font-size:12px;letter-spacing:1px}.window-title span{float:right;letter-spacing:2px}.window-body{padding:10px}
-.avatar{height:140px;border:2px dotted #d17697;background:#f7d8e3;display:flex;align-items:center;justify-content:center;text-align:center;font:18px Georgia,serif;color:#bd5279;margin-bottom:8px}
-.menu a{display:block;padding:5px 7px;border-bottom:1px dotted #d9a0b4}.menu a:hover{background:#ffe7ef;text-decoration:underline}
-.badge{display:inline-block;padding:2px 5px;margin:2px;border:1px outset #d4a5b5;background:#fff0f5;font-size:10px}
-.counter{background:#422433;color:#ff8fb3;text-align:center;padding:4px;letter-spacing:4px;font-weight:bold;text-shadow:0 0 4px #ff8fb3;border:1px inset #673047}
+.window{background:#fffaf5;border:2px solid #c995a8;box-shadow:4px 4px 0 rgba(170,110,130,.12),inset 1px 1px 0 #fff;margin-bottom:10px}
+.window-title{background:#d989a8;color:#fff;padding:5px 8px;font-weight:bold;font-size:12px;letter-spacing:1px}.window-title span{float:right;letter-spacing:2px}.window-body{padding:10px}
+.avatar{height:140px;border:2px dotted #e0a8bc;background:#fce8f0;display:flex;align-items:center;justify-content:center;text-align:center;font:18px Georgia,serif;color:#c48aa0;margin-bottom:8px}
+.menu a{display:block;padding:5px 7px;border-bottom:1px dotted #e0c4d0}.menu a:hover{background:#f9dce8;text-decoration:underline}
+.badge{display:inline-block;padding:2px 5px;margin:2px;border:1px outset #e0c4d0;background:#fce8f0;font-size:10px}
+.counter{background:#4a2a38;color:#ffb8cc;text-align:center;padding:4px;letter-spacing:4px;font-weight:bold;text-shadow:0 0 4px #ffb8cc;border:1px inset #8a5a6e}
 .main{min-width:0}.welcome-grid,.two{display:grid;grid-template-columns:1fr 250px;gap:10px}.two{grid-template-columns:1fr 1fr}
-.note{min-height:130px;background:#fff1b9;border:1px solid #c99e57;padding:15px;box-shadow:4px 4px 0 rgba(90,55,30,.12)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#a44268}
-.state{background:#f9e0e8;border:1px solid #d17697;padding:10px}.state b{color:#b83f6d}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fff6fa;border:2px outset #d4a5b5;min-height:85px;color:#673047}.card .ico{font-size:25px;display:block}
-.card:hover{background:#ffe7ef;border-style:inset;text-decoration:none}
-.content-list{min-height:120px}.entry{padding:8px 0;border-bottom:1px dotted #d17697}.entry:last-child{border:0}.entry b{color:#b83f6d}
+.note{min-height:130px;background:#fff5e8;border:1px solid #e0c8b0;padding:15px;box-shadow:4px 4px 0 rgba(160,130,100,.1)}.note h2{margin:0 0 8px;font:22px Georgia,serif;color:#c48aa0}
+.state{background:#fce8f0;border:1px solid #e0a8bc;padding:10px}.state b{color:#c48aa0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{padding:13px 8px;text-align:center;background:#fce8f0;border:2px outset #e0c4d0;min-height:85px;color:#8a5a6e}.card .ico{font-size:25px;display:block}
+.card:hover{background:#f9dce8;border-style:inset;text-decoration:none}
+.content-list{min-height:120px}.entry{padding:8px 0;border-bottom:1px dotted #e0a8bc}.entry:last-child{border:0}.entry b{color:#c48aa0}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.photo{height:110px;background:#f5d7e1;border:2px outset #d4a5b5;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;cursor:pointer}
-.photo:hover{border-color:#c74d78;border-style:inset}
+.photo{height:110px;background:#fce8f0;border:2px outset #e0c4d0;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;cursor:pointer}
+.photo:hover{border-color:#d989a8;border-style:inset}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-label{position:absolute;bottom:0;left:0;right:0;background:rgba(199,77,120,.75);color:#fff;font-size:11px;padding:3px;opacity:0}
+.photo-label{position:absolute;bottom:0;left:0;right:0;background:rgba(190,120,140,.75);color:#fff;font-size:11px;padding:3px;opacity:0}
 .photo:hover .photo-label{opacity:1}
-.timeline .entry{position:relative;padding-left:18px}.timeline .entry:before{content:"";position:absolute;left:3px;top:12px;width:7px;height:7px;border:1px solid #b83f6d;background:#fff;border-radius:50%}
-.footer{text-align:center;margin:10px;padding:12px;background:#ffe8f0;border:3px double #d17697}.secret{opacity:.45;cursor:pointer}
+.timeline .entry{position:relative;padding-left:18px}.timeline .entry:before{content:"";position:absolute;left:3px;top:12px;width:7px;height:7px;border:1px solid #c48aa0;background:#fff;border-radius:50%}
+.footer{text-align:center;margin:10px;padding:12px;background:#fce8f0;border:3px double #e0a8bc}.secret{opacity:.45;cursor:pointer}
 #home,#longDiary,#album,#music,#thoughts,#timeline{scroll-margin-top:60px}
 .music{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center}
-.disc{width:52px;height:52px;border-radius:50%;background:#6d2f49;border:5px outset #d986a4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:transform .3s}
+.disc{width:52px;height:52px;border-radius:50%;background:#7a4a5e;border:5px outset #e0a8bc;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:transform .3s}
 .disc.playing{animation:spin 3s linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .music-controls{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
-.music-btn{padding:5px 12px;border:2px outset #d4a5b5;background:#f9dbe6;color:#673047;cursor:pointer;font:12px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
-.music-btn:hover{background:#f2b1c7}
+.music-btn{padding:5px 12px;border:2px outset #e0c4d0;background:#fce8f0;color:#8a5a6e;cursor:pointer;font:12px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.music-btn:hover{background:#f9dce8}
 .music-btn:active{border-style:inset}
-.music-btn.active{background:#c74d78;color:#fff;border-style:inset}
-.progress-bar{width:100%;height:8px;background:#f0d0dc;border:1px inset #d17697;margin-top:10px;cursor:pointer}
-.progress-fill{height:100%;background:#c74d78;width:0%}
-.song-title{color:#b83f6d;font-weight:bold;font-size:14px}
-.song-info{font-size:11px;color:#a88;margin-top:3px}
-.time-display{font-size:11px;color:#a88;margin-top:5px;text-align:right}
+.music-btn.active{background:#d989a8;color:#fff;border-style:inset}
+.progress-bar{width:100%;height:8px;background:#f5dde8;border:1px inset #e0a8bc;margin-top:10px;cursor:pointer}
+.progress-fill{height:100%;background:#d989a8;width:0%}
+.song-title{color:#c48aa0;font-weight:bold;font-size:14px}
+.song-info{font-size:11px;color:#b895a5;margin-top:3px}
+.time-display{font-size:11px;color:#b895a5;margin-top:5px;text-align:right}
 .volume-control{display:flex;align-items:center;gap:8px;margin-top:10px}
-.volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f0d0dc;border:1px inset #d17697;outline:none;cursor:pointer}
-.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#c74d78;border:2px outset #e8a0bb;cursor:pointer}
-.volume-percent{font-size:11px;color:#a88;min-width:30px;text-align:right}
+.volume-slider{-webkit-appearance:none;appearance:none;width:100px;height:6px;background:#f5dde8;border:1px inset #e0a8bc;outline:none;cursor:pointer}
+.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#d989a8;border:2px outset #f0c8d8;cursor:pointer}
+.volume-percent{font-size:11px;color:#b895a5;min-width:30px;text-align:right}
 .long-diary{margin-top:10px}.long-diary .window-body{padding:14px 16px}
-.diary-paper{background:#fffdf5;border:1px solid #d1a36a;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(190,145,90,.08)}.diary-paper:last-child{margin-bottom:0}
-.diary-meta{color:#b83f6d;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #d17697}.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#a44268}
-.admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fff4f7;color:#8c4562;border:2px outset #d4a5b5;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
+.diary-paper{background:#fffaf5;border:1px solid #e0c8b0;padding:24px 30px;margin-bottom:12px;line-height:1.95;min-height:210px;box-shadow:inset 0 0 28px rgba(200,170,180,.08)}.diary-paper:last-child{margin-bottom:0}
+.diary-meta{color:#c48aa0;font-size:11px;padding-bottom:8px;border-bottom:1px dotted #e0a8bc}.diary-paper h2{margin:10px 0 14px;font:27px Georgia,serif;color:#d989a8}
+.admin-open{position:fixed;right:18px;bottom:18px;z-index:999;padding:7px 10px;background:#fffaf5;color:#8a5a6e;border:2px outset #e0c4d0;cursor:pointer;font-weight:bold;font-family:"Courier New","Microsoft YaHei",monospace}
 .admin-open:active{border-style:inset}
-.egg-open{position:fixed;left:18px;bottom:18px;z-index:999;color:#8c4562;background:#fff4f7;border:1px dotted #b85a7d;padding:6px 10px;cursor:pointer;opacity:.7;font-family:"Courier New","Microsoft YaHei",monospace;font-size:18px}
-.gate,.egg{position:fixed;inset:0;background:rgba(54,27,40,.72);display:none;align-items:center;justify-content:center;z-index:1000}
-.panel{width:400px;background:#fff8ee;border:3px double #673047;box-shadow:8px 8px 0 rgba(20,10,15,.3)}
-.panel-title{background:#c74d78;color:#fff;padding:7px 9px;font-weight:bold}
-.panel-body{padding:18px}.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #b85a7d;background:#fffdf8;font:13px "Courier New","Microsoft YaHei",monospace;color:#673047}
-.panel-body button{padding:7px 12px;border:2px outset #d4a5b5;background:#f9dbe6;color:#673047;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
+.egg-open{position:fixed;left:18px;bottom:18px;z-index:999;color:#8a5a6e;background:#fffaf5;border:1px dotted #e0a8bc;padding:6px 10px;cursor:pointer;opacity:.7;font-family:"Courier New","Microsoft YaHei",monospace;font-size:18px}
+.gate,.egg{position:fixed;inset:0;background:rgba(100,60,75,.65);display:none;align-items:center;justify-content:center;z-index:1000}
+.panel{width:400px;background:#fffaf5;border:3px double #b87a90;box-shadow:8px 8px 0 rgba(60,30,40,.2)}
+.panel-title{background:#d989a8;color:#fff;padding:7px 9px;font-weight:bold}
+.panel-body{padding:18px}.panel-body input{width:100%;padding:9px;margin:8px 0 12px;border:1px solid #e0a8bc;background:#fffaf5;font:13px "Courier New","Microsoft YaHei",monospace;color:#8a5a6e}
+.panel-body button{padding:7px 12px;border:2px outset #e0c4d0;background:#fce8f0;color:#8a5a6e;cursor:pointer;font:13px "Courier New","Microsoft YaHei",monospace;font-weight:bold}
 .panel-body button:active{border-style:inset}
-.egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#8d3f60}
+.egg-copy{text-align:center;font:18px Georgia,serif;line-height:2;color:#c48aa0}
 .close-btn{float:right;cursor:pointer;font-weight:bold}
-#splash{position:fixed;inset:0;background:#e8b5c8;background-image:radial-gradient(#d9a890 1px,transparent 1px),radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
-.fall{position:fixed;top:-30px;animation:fall linear infinite;pointer-events:none;opacity:.85;z-index:1}
+#splash{position:fixed;inset:0;background:#f5dde8;background-image:radial-gradient(#f0d0dc 1px,transparent 1px),radial-gradient(rgba(255,250,252,.7) 1px,transparent 1px);background-size:28px 28px,47px 47px;display:flex;align-items:center;justify-content:center;z-index:9999}
+.fall{position:fixed;top:-30px;animation:fall linear infinite;pointer-events:none;opacity:.8;z-index:1}
 @keyframes fall{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
 .blink{animation:blink 1.2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+/* 投票 */
+.poll-box{text-align:center;padding:10px}
+.poll-box strong{color:#d989a8;font-size:14px}
+.poll-option{display:flex;align-items:center;margin:8px 0;text-align:left}
+.poll-option input[type="radio"]{margin-right:8px;accent-color:#d989a8}
+.poll-btn{display:inline-block;padding:5px 18px;background:#fce8f0;color:#8a5a6e;border:2px outset #e0c4d0;cursor:pointer;font:12px "Courier New","Microsoft YaHei",monospace;font-weight:bold;margin:3px}
+.poll-btn:active{border-style:inset}
+.poll-note{font-size:10px;color:#b895a5;margin-top:8px}
 </style>
 </head>
 <body>
@@ -85,26 +93,26 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <!-- 开屏 -->
 <div id="splash">
   <div id="fallContainer" style="position:fixed;inset:0;pointer-events:none;z-index:1;"></div>
-  <div style="width:800px;height:450px;background:#fff8ee;border:3px double #673047;box-shadow:8px 8px 0 rgba(80,35,55,.25);display:flex;flex-direction:column;position:relative;z-index:2;">
-    <div style="background:#c74d78;color:#fff;padding:8px 10px;font-weight:bold;border-bottom:2px solid #673047;">
+  <div style="width:800px;height:450px;background:#fffaf5;border:3px double #b87a90;box-shadow:8px 8px 0 rgba(160,100,120,.18);display:flex;flex-direction:column;position:relative;z-index:2;">
+    <div style="background:#d989a8;color:#fff;padding:8px 10px;font-weight:bold;border-bottom:2px solid #b87a90;">
       MIOKI // PRIVATE DESKTOP
       <span style="float:right;letter-spacing:4px;">— □ <a href="https://cn.bing.com/?FORM=Z9FD1" style="color:#fff;text-decoration:none;">×</a></span>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px 5px;transform:translateY(8px);">
-      <div style="font:55px Georgia,serif;color:#c74d78;letter-spacing:10px;text-shadow:3px 3px 0 #f2b1c7;" id="typeText"></div>
-      <p style="color:#b83f6d;font-size:13px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
-      <div style="margin-top:10px;font:19px 'Courier New',monospace;color:#673047;" id="splashTime">00:00:00</div>
-      <div style="font-size:10px;color:#d4a0b8;margin-top:2px;" id="splashDate">2026.08.27</div>
-      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#f9dbe6;color:#673047;border:3px outset #d4a5b5;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;">✦ 点击进入 ✦</div>
+      <div style="font:55px Georgia,serif;color:#d989a8;letter-spacing:10px;text-shadow:3px 3px 0 #f9dce8;" id="typeText"></div>
+      <p style="color:#c48aa0;font-size:13px;letter-spacing:3px;margin-top:8px;">welcome to my little internet</p>
+      <div style="margin-top:10px;font:19px 'Courier New',monospace;color:#8a5a6e;" id="splashTime">00:00:00</div>
+      <div style="font-size:10px;color:#b895a5;margin-top:2px;" id="splashDate">2026.08.27</div>
+      <div onclick="document.getElementById('splash').style.display='none'" style="display:inline-block;margin-top:25px;padding:10px 35px;background:#fce8f0;color:#8a5a6e;border:3px outset #e0c4d0;cursor:pointer;font-weight:bold;font-size:16px;letter-spacing:3px;">✦ 点击进入 ✦</div>
     </div>
-    <div style="text-align:center;color:#d4a0b8;font-size:9px;letter-spacing:5px;padding:2px 0;">◆ ◇ ◆ ◇ ◆</div>
-    <div style="padding:8px 15px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff6fa;border-top:1px solid #e8c4d0;">
-      <span style="color:#d4a0b8;font-size:11px;padding:3px;">常用：</span>
-      <a href="https://www.bilibili.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📺 B站</a>
-      <a href="https://xn--iao3-lw4b.ws/languages/zh/works" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 AO3</a>
-      <a href="https://chat.deepseek.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">🤖 DeepSeek</a>
-      <a href="https://www.doubao.com/chat/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">💬 豆包</a>
-      <a href="http://jwcnew.wxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #d17697;color:#b83f6d;font-size:11px;text-decoration:none;">📖 教务系统</a>
+    <div style="text-align:center;color:#b895a5;font-size:9px;letter-spacing:5px;padding:2px 0;">◆ ◇ ◆ ◇ ◆</div>
+    <div style="padding:8px 15px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fce8f0;border-top:1px solid #e0c4d0;">
+      <span style="color:#b895a5;font-size:11px;padding:3px;">常用：</span>
+      <a href="https://www.bilibili.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #e0a8bc;color:#c48aa0;font-size:11px;text-decoration:none;">📺 B站</a>
+      <a href="https://xn--iao3-lw4b.ws/languages/zh/works" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #e0a8bc;color:#c48aa0;font-size:11px;text-decoration:none;">📖 AO3</a>
+      <a href="https://chat.deepseek.com/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #e0a8bc;color:#c48aa0;font-size:11px;text-decoration:none;">🤖 DeepSeek</a>
+      <a href="https://www.doubao.com/chat/" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #e0a8bc;color:#c48aa0;font-size:11px;text-decoration:none;">💬 豆包</a>
+      <a href="http://jwcnew.wxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" style="padding:4px 10px;background:#fff;border:1px solid #e0a8bc;color:#c48aa0;font-size:11px;text-decoration:none;">📖 教务系统</a>
     </div>
   </div>
 </div>
@@ -113,20 +121,20 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <div class="topbar">MIOKI // PRIVATE WEB DESKTOP <span>— □ <a href="javascript:location.reload()" style="color:#fff;text-decoration:none;cursor:pointer;">×</a></span></div>
 
 <div class="hero">
-    <marquee scrollamount="2" style="color:#fff8ee;font-size:12px;position:absolute;top:6px;left:10px;width:60%;">
+    <marquee scrollamount="2" style="color:#fffaf5;font-size:12px;position:absolute;top:6px;left:10px;width:60%;">
         ✨ 欢迎来到 Mioki 的小小网络角落 ✨ 本站最后更新：2026.08.27 ✨ 随便逛逛，不用着急 ✨
     </marquee>
     <h1 id="heroType"></h1>
     <div class="tag">welcome to my little internet</div>
-    <p style="color:#fff8ee;margin-top:8px;">一个属于 Mioki 的小小网络角落。</p>
+    <p style="color:#fffaf5;margin-top:8px;">一个属于 Mioki 的小小网络角落。</p>
 </div>
 
 <div class="status">♫ currently listening: <span id="statusSong">未播放</span>　|　🕰 <span id="currentTime">00:00:00</span>　|　last update: 2026.08.27</div>
 <div class="desktop">
 <aside>
 <div class="window"><div class="window-title">PROFILE <span>_ □</span></div><div class="window-body">
-<div class="avatar">M<br>I<br>O<br>K<br>I</div><b>Mioki</b><br><span style="color:#5c8b68" id="profileStatus">● online</span><br><br><span style="color:#b83f6d;" id="profileMood">mood: dreamy</span><br><br><span id="profileBio">喜欢粉色、音乐、一些漂亮的小东西。</span>
-<br><br><div style="background:#fff6fa;border:1px dashed #d17697;padding:8px;text-align:center;"><span style="font-size:11px;color:#a88;">本站已运行</span><br><span style="font-size:20px;font-weight:bold;color:#c74d78;" id="siteDays">0</span><span style="font-size:11px;color:#a88;">天</span></div>
+<div class="avatar">M<br>I<br>O<br>K<br>I</div><b>Mioki</b><br><span style="color:#8a9a5b" id="profileStatus">● online</span><br><br><span style="color:#c48aa0;" id="profileMood">mood: dreamy</span><br><br><span id="profileBio">喜欢粉色、音乐、一些漂亮的小东西。</span>
+<br><br><div style="background:#fce8f0;border:1px dashed #e0a8bc;padding:8px;text-align:center;"><span style="font-size:11px;color:#b895a5;">本站已运行</span><br><span style="font-size:20px;font-weight:bold;color:#d989a8;" id="siteDays">0</span><span style="font-size:11px;color:#b895a5;">天</span></div>
 </div></div>
 
 <div class="window"><div class="window-title">MENU <span>✦</span></div><div class="window-body menu">
@@ -142,11 +150,11 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 </div></div>
 
 <div class="window"><div class="window-title">MY HOBBIES <span>✦</span></div><div class="window-body">
-<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="openPuzzle()">🧩 网页解谜 →</div>
+<div class="entry" style="cursor:pointer;color:#c48aa0;" onclick="openPuzzle()">🧩 网页解谜 →</div>
 <div class="entry">🎨 画画</div>
-<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://cns.agedongman.com.cn/','_blank')">📺 追番 →</div>
-<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://www.mangacopy.com/','_blank')">📚 看漫画 →</div>
-<div class="entry" style="cursor:pointer;color:#b83f6d;" onclick="window.open('https://www.airpano.com/','_blank')">☁️ 发呆 →</div>
+<div class="entry" style="cursor:pointer;color:#c48aa0;" onclick="window.open('https://cns.agedongman.com.cn/','_blank')">📺 追番 →</div>
+<div class="entry" style="cursor:pointer;color:#c48aa0;" onclick="window.open('https://www.mangacopy.com/','_blank')">📚 看漫画 →</div>
+<div class="entry" style="cursor:pointer;color:#c48aa0;" onclick="window.open('https://www.airpano.com/','_blank')">☁️ 发呆 →</div>
 </div></div>
 
 <div class="window"><div class="window-title">WEB BADGES</div><div class="window-body"><span class="badge">90s WEB</span><span class="badge">PINK</span><span class="badge">PERSONAL</span><span class="badge">BEST VIEWED</span></div></div>
@@ -167,7 +175,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
   <div class="window-title">LITTLE THOUGHTS <span>THOUGHTS</span></div>
   <div class="window-body content-list" id="thoughtsList"></div>
   <div style="text-align:center;padding:5px 10px 10px;">
-    <button id="toggleThoughts" onclick="toggleThoughts()" style="display:none;padding:6px 14px;background:#f9dbe6;color:#673047;border:2px outset #d4a5b5;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+    <button id="toggleThoughts" onclick="toggleThoughts()" style="display:none;padding:6px 14px;background:#fce8f0;color:#8a5a6e;border:2px outset #e0c4d0;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
   </div>
 </div>
 
@@ -176,7 +184,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
   <div class="window-body">
     <div class="photo-grid" id="photoGrid"></div>
     <div style="text-align:center;margin-top:10px;">
-      <button id="togglePhotos" onclick="togglePhotos()" style="padding:6px 14px;background:#f9dbe6;color:#673047;border:2px outset #d4a5b5;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
+      <button id="togglePhotos" onclick="togglePhotos()" style="padding:6px 14px;background:#fce8f0;color:#8a5a6e;border:2px outset #e0c4d0;cursor:pointer;font-family:'Courier New','Microsoft YaHei',monospace;font-weight:bold;">✦ 展开更多</button>
     </div>
   </div>
 </div>
@@ -197,6 +205,21 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <div class="window" id="timeline"><div class="window-title">TIMELINE</div><div class="window-body timeline" id="timelineList"></div></div>
 </div>
 
+<div class="window">
+  <div class="window-title">🍰 小投票 ✦ <span>POLL</span></div>
+  <div class="window-body poll-box">
+    <strong>✨ 来投个票吧 ✨</strong>
+    <form method="post" action="https://poll.pollcode.com/12369653">
+      <div class="poll-option"><input type="radio" name="answer" value="1" id="poll1"><label for="poll1">yes! i love them!</label></div>
+      <div class="poll-option"><input type="radio" name="answer" value="2" id="poll2"><label for="poll2">no... i dont like sweets that much</label></div>
+      <div class="poll-option"><input type="radio" name="answer" value="3" id="poll3"><label for="poll3">secret 3rd option</label></div>
+      <input class="poll-btn" type="submit" value="Vote">
+      <input class="poll-btn" type="submit" name="view" value="View">
+    </form>
+    <div class="poll-note">♡ 谢谢参与 ♡</div>
+  </div>
+</div>
+
 <section class="window long-diary" id="longDiary"><div class="window-title">MY DIARY <span>DIARY</span></div><div class="window-body" id="diaryList"></div></section>
 </main>
 </div>
@@ -206,10 +229,9 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <button class="admin-open" id="adminBtn">🖥️ 管理</button>
 <button class="egg-open" id="eggBtn" onclick="openGame()">🐟</button>
 
-<!-- 可拖拽小窗口 -->
-<div id="dragBox" style="position:fixed;top:80px;right:20px;z-index:996;width:160px;background:#fff8ee;border:3px double #c74d78;box-shadow:4px 4px 0 rgba(140,69,98,.2);user-select:none;">
-  <div id="dragHandle" style="background:#c74d78;color:#fff;padding:4px 8px;font-size:11px;font-weight:bold;cursor:move;">MESSAGE <span style="float:right;cursor:pointer;" onclick="closeDragBox()">×</span></div>
-  <div style="padding:12px;text-align:center;font-size:12px;color:#673047;cursor:pointer;" id="dragText" onclick="changeDragText()">今天也要开心哦</div>
+<div id="dragBox" style="position:fixed;top:80px;right:20px;z-index:996;width:160px;background:#fffaf5;border:3px double #d989a8;box-shadow:4px 4px 0 rgba(180,110,130,.15);user-select:none;">
+  <div id="dragHandle" style="background:#d989a8;color:#fff;padding:4px 8px;font-size:11px;font-weight:bold;cursor:move;">MESSAGE <span style="float:right;cursor:pointer;" onclick="closeDragBox()">×</span></div>
+  <div style="padding:12px;text-align:center;font-size:12px;color:#8a5a6e;cursor:pointer;" id="dragText" onclick="changeDragText()">今天也要开心哦</div>
 </div>
 
 <div class="gate" id="adminGate"><div class="panel"><div class="panel-title">MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div><div class="panel-body">
@@ -217,7 +239,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <input id="adminPass" type="password" placeholder="password" autocomplete="off">
 <button onclick="loginAdmin()">进入后台</button>
 <button onclick="closeAdmin()">取消</button>
-<p id="adminMsg" style="color:#b83f6d"></p>
+<p id="adminMsg" style="color:#c48aa0"></p>
 </div></div></div>
 
 <div class="egg" id="eggGate"><div class="panel"><div class="panel-title">SECRET MESSAGE <span class="close-btn" onclick="closeEgg()">×</span></div><div class="panel-body egg-copy">你居然找到这里了。<br>这颗星星真的不是普通装饰。<br><br>谢谢你认真看完这个小小的网站。<br><small>—— Mioki</small><br><br><button onclick="closeEgg()">好啦，我发现了</button></div></div></div>
@@ -232,7 +254,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 <a href="https://heiziheizi123.github.io/girlsinchat/start.html" target="_blank">✦ 聊天室的女孩们</a>
 </div></div></div></div>
 
-<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()"><div class="panel" style="width:500px;"><div class="panel-title">PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div><div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #d17697;"></div></div></div>
+<div class="egg" id="photoGate" onclick="if(event.target===this)closePhoto()"><div class="panel" style="width:500px;"><div class="panel-title">PHOTO VIEWER <span class="close-btn" onclick="closePhoto()">×</span></div><div class="panel-body" style="text-align:center;"><img id="photoView" src="" style="width:100%;max-height:400px;object-fit:contain;border:2px dotted #e0a8bc;"></div></div></div>
 
 <div class="egg" id="gameGate" onclick="if(event.target===this)closeGame()"><div class="panel" style="width:450px;"><div class="panel-title">摸鱼专区 <span class="close-btn" onclick="closeGame()">×</span></div><div class="panel-body">
 <b>摸鱼时间到~</b><div class="menu" style="margin-top:10px;">
@@ -293,8 +315,8 @@ function renderPhotos(){
 function togglePhotos(){showAllPhotos = !showAllPhotos;renderPhotos();}
 var allThoughts = JSON.parse(localStorage.getItem('mioki_thoughts')) || [
   {date:'08.27', text:'今天的天气让人想喝冰冰的饮料'},
-  {date:'08.25', text:'做网站好好玩www'},
-  {date:'08.21', text:'最近一直在看小说'}
+  {date:'08.25', text:'最近一直在循环一首很喜欢的歌。'},
+  {date:'08.21', text:'一些乱七八糟的小想法'}
 ];
 var showAllThoughts = false;
 function renderThoughts(){
@@ -318,7 +340,7 @@ function renderDiary(){
   var diaries = JSON.parse(localStorage.getItem('mioki_diaries')) || [];
   var html = '';
   if(diaries.length === 0){
-    html = '<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>日记已锁定，除站主外不允许查看。</p></article>';
+    html = '<article class="diary-paper"><div class="diary-meta">2026.08.27　心情：★★★★★</div><h2>今天也要好好生活</h2><p>这里是 Mioki 的第一篇长篇日记。</p></article>';
   } else {
     diaries.forEach(function(d){
       html += '<article class="diary-paper"><div class="diary-meta">' + d.date + '　心情：' + d.mood + '</div><h2>' + d.title + '</h2><p>' + d.content + '</p></article>';
@@ -397,8 +419,6 @@ function typeEffectHero(){
     }
   }, 200);
 }
-
-// 可拖拽小窗口
 var dragBox = null;
 var dragHandle = null;
 var isDragging = false;
@@ -410,46 +430,39 @@ var dragTexts = [
   '发会儿呆吧','世界那么大，看看摄像头','玩会儿游戏','写写日记','今天天气怎么样','早点睡觉','吃顿好吃的','保持好心情'
 ];
 var dragIndex = 0;
-
 function initDrag(){
   dragBox = $('dragBox');
   dragHandle = $('dragHandle');
   if(!dragBox || !dragHandle) return;
-  
   dragHandle.addEventListener('mousedown', function(e){
     isDragging = true;
     dragOffsetX = e.clientX - dragBox.offsetLeft;
     dragOffsetY = e.clientY - dragBox.offsetTop;
     e.preventDefault();
   });
-  
   document.addEventListener('mousemove', function(e){
     if(isDragging && dragBox){
       dragBox.style.left = (e.clientX - dragOffsetX) + 'px';
       dragBox.style.top = (e.clientY - dragOffsetY) + 'px';
     }
   });
-  
   document.addEventListener('mouseup', function(){
     isDragging = false;
   });
 }
-
 function changeDragText(){
   dragIndex = (dragIndex + 1) % dragTexts.length;
   $('dragText').textContent = dragTexts[dragIndex];
 }
-
 function closeDragBox(){
   $('dragBox').style.display = 'none';
 }
-
 document.addEventListener('DOMContentLoaded',function(){
   updateSplashTime();setInterval(updateSplashTime,1000);
   typeEffect();
   setTimeout(typeEffectHero, 600);
   initDrag();
-  var symbols=['✦','♡','❀'];var colors=['#c74d78','#d17697','#e8a0bb'];var container=$('fallContainer');var count=10;
+  var symbols=['✦','♡','❀'];var colors=['#d989a8','#e0a8bc','#f0c8d8'];var container=$('fallContainer');var count=10;
   for(var i=0;i<count;i++){
     var el=document.createElement('span');el.className='fall';el.textContent=symbols[i%symbols.length];
     el.style.left=(i/count*100)+'%';el.style.fontSize=(18+(i%3)*5)+'px';el.style.color=colors[i%colors.length];
