@@ -110,7 +110,7 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 </div>
 
 <div class="shell">
-<div class="topbar">MIOKI // PRIVATE WEB DESKTOP <span>— □ ×</span></div>
+<div class="topbar">MIOKI // PRIVATE WEB DESKTOP <span>— □ <a href="javascript:location.reload()" style="color:#fff;text-decoration:none;cursor:pointer;">×</a></span></div>
 
 <div class="hero">
     <marquee scrollamount="2" style="color:#fff8ee;font-size:12px;position:absolute;top:6px;left:10px;width:60%;">
@@ -205,6 +205,12 @@ a,button,.photo,.entry,.secret,.close-btn,[onclick],input[type="range"],select,.
 
 <button class="admin-open" id="adminBtn">🖥️ 管理</button>
 <button class="egg-open" id="eggBtn" onclick="openGame()">🐟</button>
+
+<!-- 可拖拽小窗口 -->
+<div id="dragBox" style="position:fixed;top:80px;right:20px;z-index:996;width:160px;background:#fff8ee;border:3px double #c74d78;box-shadow:4px 4px 0 rgba(140,69,98,.2);user-select:none;">
+  <div id="dragHandle" style="background:#c74d78;color:#fff;padding:4px 8px;font-size:11px;font-weight:bold;cursor:move;">MESSAGE <span style="float:right;cursor:pointer;" onclick="closeDragBox()">×</span></div>
+  <div style="padding:12px;text-align:center;font-size:12px;color:#673047;cursor:pointer;" id="dragText" onclick="changeDragText()">今天也要开心哦</div>
+</div>
 
 <div class="gate" id="adminGate"><div class="panel"><div class="panel-title">MIOKI PRIVATE ADMIN <span class="close-btn" onclick="closeAdmin()">×</span></div><div class="panel-body">
 <b>管理后台</b><p>请输入管理密码：</p>
@@ -391,10 +397,58 @@ function typeEffectHero(){
     }
   }, 200);
 }
+
+// 可拖拽小窗口
+var dragBox = null;
+var dragHandle = null;
+var isDragging = false;
+var dragOffsetX = 0;
+var dragOffsetY = 0;
+var dragTexts = [
+  '今天也要开心哦','记得喝水','摸摸鱼吧','去 B站 看看','要不要玩解谜','好好休息',
+  '粉色最可爱了','听首歌放松一下','去 AO3 逛一圈','要不要画画','追番时间到了','看漫画吗',
+  '发会儿呆吧','世界那么大，看看摄像头','玩会儿游戏','写写日记','今天天气怎么样','早点睡觉','吃顿好吃的','保持好心情'
+];
+var dragIndex = 0;
+
+function initDrag(){
+  dragBox = $('dragBox');
+  dragHandle = $('dragHandle');
+  if(!dragBox || !dragHandle) return;
+  
+  dragHandle.addEventListener('mousedown', function(e){
+    isDragging = true;
+    dragOffsetX = e.clientX - dragBox.offsetLeft;
+    dragOffsetY = e.clientY - dragBox.offsetTop;
+    e.preventDefault();
+  });
+  
+  document.addEventListener('mousemove', function(e){
+    if(isDragging && dragBox){
+      dragBox.style.left = (e.clientX - dragOffsetX) + 'px';
+      dragBox.style.top = (e.clientY - dragOffsetY) + 'px';
+    }
+  });
+  
+  document.addEventListener('mouseup', function(){
+    isDragging = false;
+  });
+}
+
+function changeDragText(){
+  dragIndex = (dragIndex + 1) % dragTexts.length;
+  $('dragText').textContent = dragTexts[dragIndex];
+}
+
+function closeDragBox(){
+  $('dragBox').style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded',function(){
   updateSplashTime();setInterval(updateSplashTime,1000);
   typeEffect();
   setTimeout(typeEffectHero, 600);
+  initDrag();
   var symbols=['✦','♡','❀'];var colors=['#c74d78','#d17697','#e8a0bb'];var container=$('fallContainer');var count=10;
   for(var i=0;i<count;i++){
     var el=document.createElement('span');el.className='fall';el.textContent=symbols[i%symbols.length];
